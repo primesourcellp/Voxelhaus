@@ -44,27 +44,32 @@ const Home = () => {
     {
       icon: Handshake,
       title: "Trusted by Real Estate Agents & Developers",
-      description: "We work closely with real estate professionals, developers, and property owners who rely on us to deliver visuals that truly sell. Our proven track record ensures your listings stand out in a competitive market."
+      description: "We work closely with real estate professionals, developers, and property owners who rely on us to deliver visuals that truly sell. Our proven track record ensures your listings stand out in a competitive market.",
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       icon: Lock,
       title: "100% Confidential & Secure Services",
-      description: "Your projects and property details are always safe with us. We maintain strict confidentiality, ensuring that your work is handled with the highest level of security and professionalism."
+      description: "Your projects and property details are always safe with us. We maintain strict confidentiality, ensuring that your work is handled with the highest level of security and professionalism.",
+      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       icon: Zap,
       title: "Fast Turnaround Without Compromising Quality",
-      description: "We understand the urgency of the real estate market. That's why we deliver projects quickly while maintaining flawless quality in every floor plan, staging, and photo edit."
+      description: "We understand the urgency of the real estate market. That's why we deliver projects quickly while maintaining flawless quality in every floor plan, staging, and photo edit.",
+      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       icon: Wallet,
       title: "Affordable, Customized Solutions",
-      description: "We recognize the uniqueness of every project and create customized strategies to match. We provide tailored services that fit your budget without sacrificing the professional touch."
+      description: "We recognize the uniqueness of every project and create customized strategies to match. We provide tailored services that fit your budget without sacrificing the professional touch.",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       icon: Users,
       title: "Professional & Creative Team",
-      description: "Our experienced designers, editors, and consultants bring both technical skill and creative vision, ensuring your property visuals look polished and inspiring."
+      description: "Our experienced designers, editors, and consultants bring both technical skill and creative vision, ensuring your property visuals look polished and inspiring.",
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -741,33 +746,33 @@ const Home = () => {
                     </motion.div>
                   </motion.div>
 
-                  {/* Visual Element */}
-                  <motion.div
-                    initial={{ opacity: 0, x: isEven ? 80 : -80 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    viewport={{ once: true }}
-                    className="flex-1 relative"
-                  >
-                    <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      transition={{ duration: 0.3 }}
-                      className="relative group"
-                    >
-                      <div className="w-full h-80 rounded-3xl overflow-hidden shadow-2xl">
-                        <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                          <div className="text-center text-white">
-                            <Icon size={80} className="mx-auto mb-4 text-[#00F0FF] opacity-80" />
-                            <p className="text-xl font-semibold">{item.title}</p>
-                          </div>
-                        </div>
-                      </div>
-                      
-
-                      {/* Glow Effect */}
-                      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#00F0FF]/10 to-[#0099FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    </motion.div>
-                  </motion.div>
+                   {/* Visual Element */}
+                   <motion.div
+                     initial={{ opacity: 0, x: isEven ? 80 : -80 }}
+                     whileInView={{ opacity: 1, x: 0 }}
+                     transition={{ duration: 0.8, delay: 0.4 }}
+                     viewport={{ once: true }}
+                     className="flex-1 relative"
+                   >
+                     <motion.div
+                       whileHover={{ scale: 1.02 }}
+                       transition={{ duration: 0.3 }}
+                       className="relative group"
+                     >
+                       <div className="w-full h-80 rounded-3xl overflow-hidden shadow-2xl">
+                         <img 
+                           src={item.image}
+                           alt={item.title}
+                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                         />
+                         {/* Dark overlay for better text readability */}
+                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                       </div>
+                       
+                       {/* Glow Effect */}
+                       <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#00F0FF]/10 to-[#0099FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                     </motion.div>
+                   </motion.div>
                 </motion.div>
               );
             })}
