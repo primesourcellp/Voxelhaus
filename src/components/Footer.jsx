@@ -158,7 +158,7 @@ const Footer = () => {
               <div className="text-sm text-gray-300 space-y-1">
                 <p>Monday – Friday: 9:00 AM – 7:00 PM</p>
                 <p>Saturday: 10:00 AM – 4:00 PM</p>
-                <p>Sunday: Closed</p>
+                <p className="mb-4">Sunday: Closed</p>
               </div>
             </div>
           </div>
@@ -168,7 +168,7 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-slate-600">
         <div className="container-custom py-0">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0 py-2 mt-7">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0 py-2 mt-7 ml-4 md:ml-8 mr-4 md:mr-8">
             <p className="text-gray-400 text-sm">
               © {currentYear} Voxelhaus Consultancy. All rights reserved.
             </p>
@@ -178,7 +178,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-gray-300 text-sm font-medium hover:text-[#00d4ff] transition-colors duration-300"
             >
-              Developed by Primesource LLP
+              Developed by Primesource
             </a>
             <div className="flex items-center space-x-6 text-sm">
               <Link

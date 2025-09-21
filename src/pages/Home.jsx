@@ -759,15 +759,13 @@ const Home = () => {
                        transition={{ duration: 0.3 }}
                        className="relative group"
                      >
-                       <div className="w-full h-80 rounded-3xl overflow-hidden shadow-2xl">
-                         <img 
-                           src={item.image}
-                           alt={item.title}
-                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                         />
-                         {/* Dark overlay for better text readability */}
-                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                       </div>
+                        <div className="w-full h-80 rounded-3xl overflow-hidden shadow-2xl">
+                          <img 
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                        </div>
                        
                        {/* Glow Effect */}
                        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#00F0FF]/10 to-[#0099FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
