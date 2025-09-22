@@ -43,7 +43,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-dark text-white py-15">
       {/* Main Footer Content */}
-      <div className="container-custom section-padding">
+      <div className="container-custom section-padding ml-4 md:ml-0">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-6">

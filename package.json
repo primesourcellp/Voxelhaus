@@ -1,12 +1,12 @@
 {
-  "homepage": "https://primesourcellp.github.io/Voxelhaus",
+  "homepage": "https://github.com/primesourcellp/Voxelhaus",
   "name": "voxelhaus",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "vite --host",
+      "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
