@@ -75,7 +75,7 @@ const Navbar = () => {
               >
                 <Link to="/" className="flex items-center group">
                   <div className="relative">
-                    <div className="w-20 h-20 rounded-xl overflow-hidden transition-all duration-300 group-hover:shadow-2xl">
+                    <div className="w-25 h-25 rounded-xl overflow-hidden transition-all duration-300 group-hover:shadow-2xl">
                       <img 
                         src={logoImage} 
                         alt="Voxelhaus Logo" 
@@ -159,8 +159,8 @@ const Navbar = () => {
 
         {/* Mobile Navbar - Only for Mobile */}
         <div className="lg:hidden">
-          <div className="px-2 py-2">
-            <div className="flex items-center justify-between h-16">
+          <div className="px-2 py-0">
+            <div className="flex items-center justify-between h-20">
               {/* Mobile Logo */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -171,7 +171,7 @@ const Navbar = () => {
               >
                 <Link to="/" className="flex items-center group">
                   <div className="relative">
-                    <div className="w-16 h-16 rounded-xl overflow-hidden transition-all duration-300 group-hover:shadow-2xl">
+                    <div className="w-12 h-12 rounded-xl overflow-hidden transition-all duration-300 group-hover:shadow-2xl">
                       <img 
                         src={logoImage} 
                         alt="Voxelhaus Logo" 
