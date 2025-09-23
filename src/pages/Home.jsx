@@ -179,7 +179,7 @@ const Home = () => {
           }}
         />
         
-        <div className="container-custom relative z-10 overflow-hidden py-25">
+        <div className="container-custom relative z-10 overflow-hidden py-35">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
