@@ -19,7 +19,6 @@ import {
   ArrowRight
 } from 'lucide-react';
 
-
 const About = () => {
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -133,7 +132,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white pt-20">
+    <div className="min-h-screen bg-slate-900 text-white">
       {/* Hero Section */}
       <section className="py-20 px-6 md:px-12 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
         {/* Background Elements */}
