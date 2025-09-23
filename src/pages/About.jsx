@@ -19,7 +19,7 @@ import {
   ArrowRight,
   Palette
 } from 'lucide-react';
-import aboutHeroImage from '../assets/Image 1.jpg';
+import aboutHeroImage from '../assets/Image1.jpg';
 import houseAnimation from '../assets/house-animation.gif';
 
 
@@ -282,7 +282,7 @@ const About = () => {
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ 
 
-                    
+
                     opacity: 1, 
                     x: 0,
                     boxShadow: [
