@@ -144,7 +144,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Globe size={20} className="text-[#00d4ff] flex-shrink-0" />
                 <a
-                  href="https://voxelhaus.com"
+                  href=""
                   className="text-gray-300 hover:text-[#00d4ff] transition-colors duration-300"
                 >
                   www.voxelhaus.com
