@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/Voxelhaus">
       <div className="min-h-screen bg-slate-900 text-white font-sans">
         <Navbar />
         <main>
