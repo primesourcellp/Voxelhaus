@@ -22,7 +22,6 @@ import {
 import aboutHeroImage from '../assets/Image1.jpg';
 import houseAnimation from '../assets/house-animation.gif';
 
-
 const About = () => {
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -136,7 +135,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-900 text-white pt-20">
       {/* Hero Section */}
       <section 
         className="min-h-screen flex items-center relative overflow-x-hidden w-full"

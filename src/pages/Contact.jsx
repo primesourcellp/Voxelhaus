@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaGlobe, FaSmile, FaClock, FaLock, FaLightbulb } from "react-icons/fa";
-import BgImage from '../assets/bg.jpeg';
+import BgImage from '../assets/image1.jpg';
 
 const contactInfo = [
   { icon: FaMapMarkerAlt, title: "Office Address", info: "123 Main Street, City, Country" },
@@ -187,6 +187,28 @@ const Contact = () => {
       </section>
 </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+                                           
+
+
+
+
+
+
+
+
+
+
 
   );
 };
