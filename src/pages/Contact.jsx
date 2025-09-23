@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaGlobe, FaSmile, FaClock, FaLock, FaLightbulb } from "react-icons/fa";
+import BgImage from '../assets/bg.jpeg';
 
 const contactInfo = [
   { icon: FaMapMarkerAlt, title: "Office Address", info: "123 Main Street, City, Country" },
@@ -18,8 +19,14 @@ const whyReachOut = [
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white pt-20">
-
+    <div className="min-h-screen  text-white pt-20 relative">
+       <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${BgImage})` }}
+      />
+          <div className="absolute inset-0 bg-black/70" />
+          
+      <div className="relative z-10 pt-20 px-6 md:px-12">
       {/* Contact Header */}
       <section className="text-center py-16 px-6 md:px-12">
         <motion.h1
@@ -178,8 +185,9 @@ const Contact = () => {
           ></iframe>
         </div>
       </section>
+</div>
+</div>
 
-    </div>
   );
 };
 

@@ -19,6 +19,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 
+
 const About = () => {
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
