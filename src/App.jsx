@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -15,6 +15,17 @@ import Gallery from './pages/Gallery';
 import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
 
+// ScrollToTop component to handle page navigation
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   useEffect(() => {
     AOS.init({
@@ -26,7 +37,7 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/Voxelhaus">
+    <Router >
       <div className="min-h-screen bg-slate-900 text-white font-sans">
         <Navbar />
         <main>
