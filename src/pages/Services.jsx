@@ -187,7 +187,7 @@ const Services = () => {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <div className="bg-gray-800/50 backdrop-blur-sm border border-[#00F0FF]/30 rounded-2xl p-6 md:p-8 hover:border-[#00F0FF] transition-all duration-500 hover:shadow-2xl hover:shadow-[#00F0FF]/30 hover:-translate-y-2 shadow-[0px_0px_0px_5px_rgba(0,240,255,0.1)] shadow-[0px_0px_15px_2px_rgba(0,240,255,0.15)] hover:shadow-[0px_0px_20px_5px_rgba(0,240,255,0.3)]">
+                  <div className="bg-gray-800/50 backdrop-blur-sm border border-[#00F0FF]/30 rounded-2xl p-6 md:p-8 hover:border-[#00F0FF] transition-all duration-500 hover:-translate-y-2 shadow-[0px_0px_15px_2px_rgba(0,240,255,0.15)] hover:shadow-[0px_0px_20px_5px_rgba(0,240,255,0.3)]">
                     <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-2xl flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
                       <Icon size={28} className="text-white md:hidden" />
                       <Icon size={32} className="text-white hidden md:block" />
@@ -308,7 +308,7 @@ const Services = () => {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <div className="bg-gray-800/50 backdrop-blur-sm border border-[#00F0FF]/30 rounded-2xl p-6 md:p-8 hover:border-[#00F0FF] transition-all duration-500 hover:shadow-2xl hover:shadow-[#00F0FF]/30 hover:-translate-y-2 shadow-[0px_0px_0px_5px_rgba(0,240,255,0.1)] shadow-[0px_0px_15px_2px_rgba(0,240,255,0.15)] hover:shadow-[0px_0px_20px_5px_rgba(0,240,255,0.3)]">
+                  <div className="bg-gray-800/50 backdrop-blur-sm border border-[#00F0FF]/30 rounded-2xl p-6 md:p-8 hover:border-[#00F0FF] transition-all duration-500 hover:-translate-y-2 shadow-[0px_0px_15px_2px_rgba(0,240,255,0.15)] hover:shadow-[0px_0px_20px_5px_rgba(0,240,255,0.3)]">
                     <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-2xl flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
                       <Icon size={28} className="text-white md:hidden" />
                       <Icon size={32} className="text-white hidden md:block" />
