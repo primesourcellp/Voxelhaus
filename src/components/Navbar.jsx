@@ -67,27 +67,19 @@ const Navbar = () => {
             <div className="flex items-center justify-between h-24">
               {/* Left Side - Logo */}
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="relative group"
+                className="relative"
                 data-aos="fade-right"
                 data-aos-delay="100"
               >
-                <Link to="/" className="flex items-center group">
+                <Link to="/" className="flex items-center">
                   <div className="relative">
-                    <div className="w-25 h-25 rounded-xl overflow-hidden transition-all duration-300 group-hover:shadow-2xl">
+                    <div className="w-16 h-16 rounded-xl overflow-hidden">
                       <img 
                         src={logoImage} 
                         alt="Voxelhaus Logo" 
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <div
-                      className="absolute -inset-1 rounded-xl blur opacity-0 group-hover:opacity-60 transition-opacity duration-300"
-                      style={{
-                        background: 'linear-gradient(135deg, #0099FF 0%, #0066CC 100%)',
-                      }}
-                    />
                   </div>
                 </Link>
               </motion.div>
@@ -163,27 +155,19 @@ const Navbar = () => {
             <div className="flex items-center justify-between h-20">
               {/* Mobile Logo */}
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="relative group"
+                className="relative"
                 data-aos="fade-right"
                 data-aos-delay="100"
               >
-                <Link to="/" className="flex items-center group">
+                <Link to="/" className="flex items-center">
                   <div className="relative">
-                    <div className="w-12 h-12 rounded-xl overflow-hidden transition-all duration-300 group-hover:shadow-2xl">
+                    <div className="w-10 h-10 rounded-xl overflow-hidden">
                       <img 
                         src={logoImage} 
                         alt="Voxelhaus Logo" 
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <div
-                      className="absolute -inset-1 rounded-xl blur opacity-0 group-hover:opacity-60 transition-opacity duration-300"
-                      style={{
-                        background: 'linear-gradient(135deg, #0099FF 0%, #0066CC 100%)',
-                      }}
-                    />
                   </div>
                 </Link>
               </motion.div>

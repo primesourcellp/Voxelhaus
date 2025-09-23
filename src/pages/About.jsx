@@ -16,8 +16,11 @@ import {
   Heart,
   TrendingUp,
   MessageSquare,
-  ArrowRight
+  ArrowRight,
+  Palette
 } from 'lucide-react';
+import aboutHeroImage from '../assets/Image 1.jpg';
+import houseAnimation from '../assets/house-animation.gif';
 
 
 const About = () => {
@@ -133,71 +136,288 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 px-6 md:px-12 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-[#00F0FF] rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#0099FF] rounded-full blur-3xl"></div>
-        </div>
+      <section 
+        className="min-h-screen flex items-center relative overflow-x-hidden w-full"
+        style={{
+          backgroundImage: `url(${aboutHeroImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        {/* Dark Overlay with Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+        
+        {/* Animated Background Elements */}
+        <motion.div 
+          className="absolute top-20 left-20 w-32 h-32 bg-[#00F0FF]/10 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.6, 0.3]
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-20 right-20 w-40 h-40 bg-[#0099FF]/10 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+            opacity: [0.4, 0.7, 0.4]
+          }}
+          transition={{ 
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        <div className="container-custom relative z-10 overflow-hidden py-35">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ 
+                opacity: 1, 
+                x: 0,
+                y: [0, -5, 0]
+              }}
+              transition={{ 
+                opacity: { duration: 0.8 },
+                x: { duration: 0.8 },
+                y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+              }}
+              className="space-y-8 px-4 lg:px-8"
+            >
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <motion.h1 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+                  >
+                    <motion.span
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4 }}
+                      className="block"
+                    >
+                      About{' '}
+                    </motion.span>
+                    <motion.span 
+                      className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] bg-clip-text text-transparent block"
+                      style={{ textShadow: '0 0 30px rgba(0, 240, 255, 0.5)' }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.6 }}
+                      whileHover={{ 
+                        scale: 1.05,
+                        textShadow: '0 0 40px rgba(0, 240, 255, 0.8)'
+                      }}
+                    >
+                      Voxelhaus
+                    </motion.span>
+                  </motion.h1>
+                </div>
+                
+                <div className="space-y-6">
+                  <motion.p 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.8 }}
+                    className="text-xl text-gray-300 leading-relaxed"
+                    whileHover={{ 
+                      scale: 1.02,
+                      color: '#ffffff'
+                    }}
+                  >
+                    At Voxelhaus consultancy, we specialize in providing essential visual marketing tools that empower real estate professionals to sell properties faster and at a higher value.
+                  </motion.p>
+                  
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 1 }}
+                    className="flex flex-wrap gap-4 mt-8"
+                  >
+                    <motion.div 
+                      className="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full"
+                      whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Shield className="w-4 h-4 text-[#00F0FF]" />
+                      <span className="text-white/90 text-sm font-medium">Trusted Service</span>
+                    </motion.div>
+                    <motion.div 
+                      className="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full"
+                      whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Award className="w-4 h-4 text-[#00F0FF]" />
+                      <span className="text-white/90 text-sm font-medium">Quality Assured</span>
+                    </motion.div>
+                    <motion.div 
+                      className="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full"
+                      whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Zap className="w-4 h-4 text-[#00F0FF]" />
+                      <span className="text-white/90 text-sm font-medium">Fast Delivery</span>
+                    </motion.div>
+                  </motion.div>
+                </div>
+              </div>
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+                className="flex flex-col sm:flex-row gap-4"
+              >
+                <motion.button
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ 
+                    opacity: 1, 
+                    x: 0,
+                    boxShadow: [
+                      '0 0 20px rgba(0, 240, 255, 0.3)',
+                      '0 0 30px rgba(0, 240, 255, 0.5)',
+                      '0 0 20px rgba(0, 240, 255, 0.3)'
+                    ]
+                  }}
+                  transition={{ 
+                    opacity: { duration: 0.6, delay: 1.4 },
+                    x: { duration: 0.6, delay: 1.4 },
+                    boxShadow: { duration: 2, repeat: Infinity }
+                  }}
+                  className="px-8 py-4 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-white font-bold rounded-xl flex items-center gap-3 group"
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: '0 0 40px rgba(0, 240, 255, 0.6)'
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Get Started Today
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </motion.button>
+              </motion.div>
+            </motion.div>
 
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              About{' '}
-              <span className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] bg-clip-text text-transparent">
-                Voxelhaus
-              </span>
-            </h1>
-            <p className="text-xl text-gray-300 leading-relaxed mb-8">
-              At Voxelhaus consultancy, we specialize in providing essential visual marketing tools that empower real estate professionals to sell properties faster and at a higher value.
-            </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-full mx-auto"></div>
-          </motion.div>
+           
+          </div>
         </div>
       </section>
 
       {/* Our Commitment Section */}
       <section className="py-20 px-6 md:px-12 bg-gray-800 relative overflow-hidden">
         <div className="container-custom relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto text-center mb-16"
+              className="space-y-8"
           >
-            <h2 className="text-4xl font-bold text-white mb-6">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Our Commitment to{' '}
-              <span className="text-[#00F0FF]">You</span>
+                  <span className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] bg-clip-text text-transparent">
+                    You
+                  </span>
             </h2>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              We are more than just a service provider; Our commitment is to deliver not just stunning images but a seamless and reliable experience from start to finish. We work tirelessly to ensure that every visual we create contributes directly to your success, helping you win more listings, impress your clients, and stand out in a competitive market. Your goals are our goals, and we are committed to helping you achieve them with speed, quality, and professionalism.
-            </p>
-          </motion.div>
+                <p className="text-xl text-gray-300 leading-relaxed mb-8">
+                  We are more than just a service provider; Our commitment is to deliver not just stunning images but a seamless and reliable experience from start to finish.
+                </p>
+                <p className="text-lg text-gray-400 leading-relaxed mb-8">
+                  We work tirelessly to ensure that every visual we create contributes directly to your success, helping you win more listings, impress your clients, and stand out in a competitive market. Your goals are our goals, and we are committed to helping you achieve them with speed, quality, and professionalism.
+                </p>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-[#00F0FF]" />
+                    <span className="text-white font-medium">Transform empty spaces into stunning properties</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-[#00F0FF]" />
+                    <span className="text-white font-medium">Accelerate sales with compelling visuals</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-[#00F0FF]" />
+                    <span className="text-white font-medium">Deliver results that exceed expectations</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full">
+                  <CheckCircle className="w-5 h-5 text-[#00F0FF]" />
+                  <span className="text-white font-medium">Quality Guaranteed</span>
+                </div>
+                <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full">
+                  <Clock className="w-5 h-5 text-[#00F0FF]" />
+                  <span className="text-white font-medium">Fast Delivery</span>
+                </div>
+                <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full">
+                  <Shield className="w-5 h-5 text-[#00F0FF]" />
+                  <span className="text-white font-medium">Secure Service</span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img 
+                  src={houseAnimation} 
+                  alt="House Animation - Our Commitment to Excellence" 
+                  className="w-full h-96 object-cover"
+                />
+                {/* Blue Tint Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0099FF]/30 via-transparent to-[#00F0FF]/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="text-white text-xl font-bold mb-2">Our Commitment in Action</h3>
+                  <p className="text-white/90 text-sm">Transforming properties with dedication and expertise</p>
+                </div>
+              </div>
+              
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-full opacity-20 blur-xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-r from-[#0099FF] to-[#00F0FF] rounded-full opacity-20 blur-xl"></div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Building Trust Section */}
       <section className="py-20 px-6 md:px-12 bg-gray-900 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-[#00F0FF]/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-[#0099FF]/5 rounded-full blur-3xl"></div>
+        
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center max-w-4xl mx-auto mb-16"
+            className="text-center max-w-4xl mx-auto mb-20"
           >
-            <h2 className="text-4xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Building Trust with{' '}
-              <span className="text-[#00F0FF]">Voxelhaus</span>
+              <span className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] bg-clip-text text-transparent">
+                Voxelhaus
+              </span>
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed">
               The success of any partnership is fundamentally rooted in the trust shared between its members. Here is how we build it with every client, every day:
@@ -214,21 +434,24 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 hover:border-[#00F0FF]/50 transition-all duration-300"
+                  className="group bg-gradient-to-br from-gray-800/60 via-gray-800/40 to-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-3xl p-8 hover:border-[#00F0FF]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#00F0FF]/10"
                 >
-                  <div className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-6">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 360 }}
                       transition={{ duration: 0.6 }}
-                      className="w-12 h-12 bg-[#00F0FF]/20 rounded-xl flex items-center justify-center flex-shrink-0"
+                      className="w-16 h-16 bg-gradient-to-r from-[#00F0FF]/20 to-[#0099FF]/20 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:shadow-lg group-hover:shadow-[#00F0FF]/25"
                     >
-                      <Icon size={24} className="text-[#00F0FF]" />
+                      <Icon size={28} className="text-[#00F0FF]" />
                     </motion.div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-3">{point.title}</h3>
-                      <p className="text-gray-300 leading-relaxed">{point.description}</p>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#00F0FF] transition-colors duration-300">{point.title}</h3>
+                      <p className="text-gray-300 leading-relaxed text-lg">{point.description}</p>
                     </div>
                   </div>
+                  
+                  {/* Hover Effect Line */}
+                  <div className="mt-6 h-1 bg-gradient-to-r from-transparent via-[#00F0FF]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
                 </motion.div>
               );
             })}
@@ -239,21 +462,73 @@ const About = () => {
       {/* Why Choose Us Section */}
       <section className="py-20 px-6 md:px-12 bg-gray-800 relative overflow-hidden">
         <div className="container-custom relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center max-w-4xl mx-auto mb-16"
+              className="space-y-8"
           >
-            <h2 className="text-4xl font-bold text-white mb-6">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Why Choose{' '}
-              <span className="text-[#00F0FF]">Voxelhaus?</span>
+                  <span className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] bg-clip-text text-transparent">
+                    Voxelhaus?
+                  </span>
             </h2>
-            <p className="text-xl text-gray-300 leading-relaxed">
+                <p className="text-xl text-gray-300 leading-relaxed mb-8">
               Choosing us is an investment in your property's success. Here are six reasons why real estate professionals partner with us:
             </p>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-lg">1</span>
+                  </div>
+                  <span className="text-white text-lg font-medium">Professional Quality Guaranteed</span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-lg">2</span>
+                  </div>
+                  <span className="text-white text-lg font-medium">Fast Turnaround Times</span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-lg">3</span>
+                  </div>
+                  <span className="text-white text-lg font-medium">100% Confidential Service</span>
+                </div>
+              </div>
           </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Real Estate Success" 
+                  className="w-full h-96 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="text-white text-xl font-bold mb-2">Success Stories</h3>
+                  <p className="text-white/90 text-sm">Trusted by real estate professionals worldwide</p>
+                </div>
+              </div>
+              
+              {/* Floating Elements */}
+              <div className="absolute -top-6 -left-6 w-20 h-20 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-full opacity-20 blur-xl"></div>
+              <div className="absolute -bottom-6 -right-6 w-28 h-28 bg-gradient-to-r from-[#0099FF] to-[#00F0FF] rounded-full opacity-20 blur-xl"></div>
+            </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whyChooseUs.map((item, index) => {
@@ -265,17 +540,20 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 hover:border-[#00F0FF]/50 transition-all duration-300 group"
+                  className="group bg-gradient-to-br from-gray-900/60 via-gray-900/40 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-3xl p-8 hover:border-[#00F0FF]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#00F0FF]/10"
                 >
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 360 }}
                     transition={{ duration: 0.6 }}
-                    className="w-16 h-16 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-lg group-hover:shadow-[#00F0FF]/25"
+                    className="w-20 h-20 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-3xl flex items-center justify-center mb-6 group-hover:shadow-lg group-hover:shadow-[#00F0FF]/25"
                   >
-                    <Icon size={32} className="text-white" />
+                    <Icon size={36} className="text-white" />
                   </motion.div>
-                  <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{item.description}</p>
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#00F0FF] transition-colors duration-300">{item.title}</h3>
+                  <p className="text-gray-300 leading-relaxed text-lg">{item.description}</p>
+                  
+                  {/* Hover Effect Line */}
+                  <div className="mt-6 h-1 bg-gradient-to-r from-transparent via-[#00F0FF]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
                 </motion.div>
               );
             })}
