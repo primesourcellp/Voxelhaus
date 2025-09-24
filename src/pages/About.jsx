@@ -20,6 +20,7 @@ import {
   Palette
 } from 'lucide-react';
 import aboutHeroImage from '../assets/image1.jpg';
+import houseAnimation from '../assets/house-animation.gif';
 
 const About = () => {
   const fadeInUp = {
