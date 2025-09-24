@@ -20,7 +20,15 @@ import {
   ArrowRight,
   Palette
 } from 'lucide-react';
-import aboutHeroImage from '../assets/image1.jpg';
+import aboutHeroImage from '../assets/Image1.jpg';
+import houseAnimation from '../assets/house-animation.gif';
+import trustImage from '../assets/Image3.jpg';
+import commitmentImage from '../assets/Image4.jpg';
+import whyChooseImage from '../assets/Image.jpg';
+import valuesImage from '../assets/bg.jpeg';
+import advantageImage from '../assets/bg2.jpeg';
+import partnerImage from '../assets/bg3.jpeg';
+
 
 const About = () => {
   const [activeCard, setActiveCard] = useState(null);
