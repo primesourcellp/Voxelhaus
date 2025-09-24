@@ -309,7 +309,7 @@ const Services = () => {
               className="relative"
             >
               {/* Services Image */}
-              <div className="w-full h-96 rounded-2xl overflow-hidden relative shadow-2xl">
+              <div className="w-3/4 mx-auto h-96 rounded-2xl overflow-hidden relative shadow-2xl">
                 <img 
                   src={image3d4} 
                   alt="Professional Visual Solutions" 
