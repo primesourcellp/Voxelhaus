@@ -31,7 +31,6 @@ const Navbar = () => {
     { name: 'About Us', path: '/about', icon: Users },
     { name: 'Services', path: '/services', icon: Briefcase },
     { name: 'Gallery', path: '/gallery', icon: Images },
-    { name: 'Testimonials', path: '/testimonials', icon: MessageSquare },
     { name: 'Contact', path: '/contact', icon: Phone },
   ];
 
