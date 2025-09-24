@@ -778,93 +778,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section 
-        className="py-20 px-6 md:px-12 relative overflow-hidden"
-        style={{
-          backgroundImage: `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="architecture" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"><rect width="200" height="200" fill="%23111127"/><path d="M0 0L200 200M200 0L0 200" stroke="%2300F0FF" stroke-width="1" opacity="0.1"/><circle cx="100" cy="100" r="50" fill="none" stroke="%2300F0FF" stroke-width="0.5" opacity="0.2"/></pattern></defs><rect width="1200" height="800" fill="url(%23architecture)"/></svg>')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      >
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/70"></div>
-        
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <motion.h2 
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-bold text-white mb-6"
-            >
-              Ready to Elevate Your Real Estate Listings?
-            </motion.h2>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Transform your property visuals by contacting Voxelhaus consultancy today for a 
-              confidential consultation.
-            </p>
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <motion.button
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: '0 0 30px rgba(0, 240, 255, 0.6)'
-                }}
-                whileTap={{ scale: 0.95 }}
-                animate={{ 
-                  boxShadow: [
-                    '0 0 20px rgba(0, 240, 255, 0.3)',
-                    '0 0 30px rgba(0, 240, 255, 0.6)',
-                    '0 0 20px rgba(0, 240, 255, 0.3)'
-                  ]
-                }}
-                transition={{ 
-                  boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" }
-                }}
-                className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-bold px-8 py-4 rounded-xl flex items-center justify-center space-x-2 text-lg transition-all duration-300"
-              >
-                <span>Get Started</span>
-                <ArrowRight size={20} />
-              </motion.button>
-              <motion.button
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: '0 0 30px rgba(0, 240, 255, 0.6)'
-                }}
-                whileTap={{ scale: 0.95 }}
-                animate={{ 
-                  boxShadow: [
-                    '0 0 20px rgba(0, 240, 255, 0.3)',
-                    '0 0 30px rgba(0, 240, 255, 0.6)',
-                    '0 0 20px rgba(0, 240, 255, 0.3)'
-                  ]
-                }}
-                transition={{ 
-                  boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
-                }}
-                className="border-2 border-[#00F0FF] text-[#00F0FF] px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 text-lg hover:bg-[#00F0FF] hover:text-black transition-all duration-300"
-              >
-                <MessageSquare size={20} />
-                <span>WhatsApp Us</span>
-              </motion.button>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
+      
       {/* Our Process */}
       <section className="py-20 px-6 md:px-12 bg-gray-900 relative overflow-hidden">
         {/* Background Pattern */}
@@ -1004,6 +918,93 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/* Call to Action Section */}
+      <section 
+        className="py-20 px-6 md:px-12 relative overflow-hidden"
+        style={{
+          backgroundImage: `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="architecture" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"><rect width="200" height="200" fill="%23111127"/><path d="M0 0L200 200M200 0L0 200" stroke="%2300F0FF" stroke-width="1" opacity="0.1"/><circle cx="100" cy="100" r="50" fill="none" stroke="%2300F0FF" stroke-width="0.5" opacity="0.2"/></pattern></defs><rect width="1200" height="800" fill="url(%23architecture)"/></svg>')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/70"></div>
+        
+        <div className="container-custom relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <motion.h2 
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl font-bold text-white mb-6"
+            >
+              Ready to Elevate Your Real Estate Listings?
+            </motion.h2>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              Transform your property visuals by contacting Voxelhaus consultancy today for a 
+              confidential consultation.
+            </p>
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <motion.button
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: '0 0 30px rgba(0, 240, 255, 0.6)'
+                }}
+                whileTap={{ scale: 0.95 }}
+                animate={{ 
+                  boxShadow: [
+                    '0 0 20px rgba(0, 240, 255, 0.3)',
+                    '0 0 30px rgba(0, 240, 255, 0.6)',
+                    '0 0 20px rgba(0, 240, 255, 0.3)'
+                  ]
+                }}
+                transition={{ 
+                  boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+                }}
+                className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-bold px-8 py-4 rounded-xl flex items-center justify-center space-x-2 text-lg transition-all duration-300"
+              >
+                <span>Get Started</span>
+                <ArrowRight size={20} />
+              </motion.button>
+              <motion.button
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: '0 0 30px rgba(0, 240, 255, 0.6)'
+                }}
+                whileTap={{ scale: 0.95 }}
+                animate={{ 
+                  boxShadow: [
+                    '0 0 20px rgba(0, 240, 255, 0.3)',
+                    '0 0 30px rgba(0, 240, 255, 0.6)',
+                    '0 0 20px rgba(0, 240, 255, 0.3)'
+                  ]
+                }}
+                transition={{ 
+                  boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
+                }}
+                className="border-2 border-[#00F0FF] text-[#00F0FF] px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 text-lg hover:bg-[#00F0FF] hover:text-black transition-all duration-300"
+              >
+                <MessageSquare size={20} />
+                <span>WhatsApp Us</span>
+              </motion.button>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
     </div>
   );
 };

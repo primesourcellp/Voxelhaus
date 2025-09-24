@@ -12,8 +12,10 @@ import {
   Users,
   Clock,
   Award,
-  DollarSign
+  DollarSign,
+  MessageSquare
 } from 'lucide-react';
+import image3d4 from '../assets/3d_image_4.jpg';
 
 // Import service components
 import RealEstateServices from '../components/services/RealEstateServices';
@@ -73,90 +75,293 @@ const Services = () => {
 
   const stats = [
     { icon: Users, number: "500+", label: "Happy Clients" },
-    { icon: Award, number: "1000+", label: "Projects Completed" },
     { icon: Star, number: "4.9/5", label: "Client Rating" },
     { icon: Clock, number: "24hrs", label: "Average Delivery" }
   ];
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white pt-20">
-      {/* Hero Section */}
-      <section className="py-20 px-6 md:px-12 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,240,255,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,153,255,0.1),transparent_50%)]"></div>
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#00F0FF]/50 to-transparent"></div>
+    <div className="min-h-screen bg-slate-900 text-white">
+      {/* Full Page Hero Section */}
+      <section 
+        className="min-h-screen flex items-center relative overflow-x-hidden w-full"
+        style={{
+          backgroundImage: `url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"%3E%3Cdefs%3E%3Cpattern id="services-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"%3E%3Crect width="100" height="100" fill="%23111127"/%3E%3Cpath d="M0 0L100 100M100 0L0 100" stroke="%2300F0FF" stroke-width="0.5" opacity="0.1"/%3E%3Ccircle cx="50" cy="50" r="20" fill="none" stroke="%2300F0FF" stroke-width="0.3" opacity="0.2"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width="1200" height="800" fill="url(%23services-pattern)"/%3E%3C/svg%3E')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* Dark Overlay with Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
         
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center max-w-5xl mx-auto"
-          >
+        {/* Animated Background Elements */}
+        <motion.div 
+          className="absolute top-20 left-20 w-32 h-32 bg-[#00F0FF]/10 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.6, 0.3]
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-20 right-20 w-40 h-40 bg-[#0099FF]/10 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+            opacity: [0.4, 0.7, 0.4]
+          }}
+          transition={{ 
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        <div className="container-custom relative z-10 overflow-hidden py-35">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center space-x-3 mb-8"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8 px-4 lg:px-8"
             >
-              <div className="w-2 h-2 bg-[#00F0FF] rounded-full animate-pulse"></div>
-              <span className="text-[#00F0FF] font-semibold text-lg tracking-wider uppercase">Our Services</span>
-              <div className="w-2 h-2 bg-[#00F0FF] rounded-full animate-pulse"></div>
-            </motion.div>
-            
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
-              Professional Visual{' '}
-              <span className="bg-gradient-to-r from-[#00F0FF] via-[#0099FF] to-[#00F0FF] bg-clip-text text-transparent">
-                Solutions
-              </span>
-            </h1>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto mb-12"
-            >
-              At Voxelhaus consultancy, we provide a full suite of professional visual solutions designed to help real estate professionals like you market properties more effectively. From foundational floor plans to stunning photo enhancements, our services are tailored to make your listings stand out and attract the right buyers.
-            </motion.p>
+              <div className="space-y-6">
+                {/* Badge */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="inline-flex items-center space-x-2 bg-[#00F0FF]/10 border border-[#00F0FF]/30 rounded-full px-6 py-3"
+                >
+                  <div className="w-2 h-2 bg-[#00F0FF] rounded-full animate-pulse"></div>
+                  <span className="text-[#00F0FF] font-semibold text-lg tracking-wider uppercase">Professional Visual Solutions</span>
+                  <div className="w-2 h-2 bg-[#00F0FF] rounded-full animate-pulse"></div>
+                </motion.div>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
-            >
-              {stats.map((stat, index) => {
-                const Icon = stat.icon;
-                return (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="text-center"
+                <motion.h1 
+                  initial={{ opacity: 0, x: -30, rotateX: -90 }}
+                  animate={{ opacity: 1, x: 0, rotateX: 0 }}
+                  transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+                >
+                  <motion.span
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.4 }}
+                    className="block"
                   >
-                    <div className="w-16 h-16 bg-gradient-to-r from-[#00F0FF]/20 to-[#0099FF]/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <Icon size={24} className="text-[#00F0FF]" />
-                    </div>
-                    <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                    <div className="text-gray-400 text-sm">{stat.label}</div>
-                  </motion.div>
-                );
-              })}
+                    Professional Visual
+                  </motion.span>
+                  <motion.span 
+                    className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] bg-clip-text text-transparent block"
+                    style={{ textShadow: '0 0 30px rgba(0, 240, 255, 0.5)' }}
+                    initial={{ opacity: 0, y: 50, rotateX: 90 }}
+                    animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                    transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
+                  >
+                    Solutions
+                  </motion.span>
+                </motion.h1>
+                
+                <motion.p 
+                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+                  className="text-xl text-gray-300 leading-relaxed"
+                  whileHover={{ 
+                    scale: 1.02,
+                    color: '#ffffff'
+                  }}
+                >
+                  At Voxelhaus consultancy, we provide a full suite of professional visual solutions designed to help real estate professionals like you market properties more effectively. From foundational floor plans to stunning photo enhancements, our services are tailored to make your listings stand out and attract the right buyers.
+                </motion.p>
+              </div>
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1 }}
+                className="flex flex-col sm:flex-row gap-4"
+              >
+                <motion.button
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ 
+                    opacity: 1, 
+                    x: 0,
+                    boxShadow: [
+                      '0 0 20px rgba(0, 240, 255, 0.3)',
+                      '0 0 30px rgba(0, 240, 255, 0.5)',
+                      '0 0 20px rgba(0, 240, 255, 0.3)'
+                    ]
+                  }}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: 1.2,
+                    boxShadow: {
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }
+                  }}
+                  whileHover={{ 
+                    scale: 1.08,
+                    boxShadow: '0 0 40px rgba(0, 240, 255, 0.8), 0 0 80px rgba(0, 240, 255, 0.4)',
+                    y: -5
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-bold px-8 py-4 rounded-xl flex items-center justify-center space-x-2 text-lg transition-all duration-300 border-2 border-transparent hover:border-[#00F0FF]/50"
+                >
+                  <span>Get Started</span>
+                  <ArrowRight size={20} />
+                </motion.button>
+                <motion.button
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ 
+                    opacity: 1, 
+                    x: 0,
+                    boxShadow: [
+                      '0 0 20px rgba(0, 240, 255, 0.2)',
+                      '0 0 30px rgba(0, 240, 255, 0.4)',
+                      '0 0 20px rgba(0, 240, 255, 0.2)'
+                    ]
+                  }}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: 1.4,
+                    boxShadow: {
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.5
+                    }
+                  }}
+                  whileHover={{ 
+                    scale: 1.08,
+                    boxShadow: '0 0 40px rgba(0, 240, 255, 0.6), 0 0 80px rgba(0, 240, 255, 0.3)',
+                    y: -5
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border-2 border-[#00F0FF] text-[#00F0FF] px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 text-lg hover:bg-[#00F0FF] hover:text-black transition-all duration-300"
+                >
+                  <MessageSquare size={20} />
+                  <span>Contact Us Today</span>
+                </motion.button>
+              </motion.div>
+
+              {/* Stats */}
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.6 }}
+                className="grid grid-cols-3 gap-4 pt-8"
+              >
+                {stats.map((stat, index) => {
+                  const Icon = stat.icon;
+                  return (
+                    <motion.div 
+                      key={stat.label}
+                      className="text-center p-4 rounded-xl bg-black/20 backdrop-blur-sm border border-[#00F0FF]/20 hover:border-[#00F0FF]/50 transition-all duration-300"
+                      initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 1.8 + index * 0.2 }}
+                      whileHover={{ 
+                        scale: 1.05,
+                        boxShadow: '0 0 30px rgba(0, 240, 255, 0.3)',
+                        y: -5
+                      }}
+                    >
+                      <div className="w-12 h-12 bg-gradient-to-r from-[#00F0FF]/20 to-[#0099FF]/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                        <Icon size={20} className="text-[#00F0FF]" />
+                      </div>
+                      <motion.div 
+                        className="text-2xl font-bold text-[#00F0FF]"
+                        style={{ textShadow: '0 0 20px rgba(0, 240, 255, 0.5)' }}
+                        animate={{
+                          textShadow: [
+                            '0 0 20px rgba(0, 240, 255, 0.5)',
+                            '0 0 30px rgba(0, 240, 255, 0.8)',
+                            '0 0 20px rgba(0, 240, 255, 0.5)'
+                          ]
+                        }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      >
+                        {stat.number}
+                      </motion.div>
+                      <div className="text-sm text-gray-400 mt-2">{stat.label}</div>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
             </motion.div>
-          </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="relative"
+            >
+              {/* Services Image */}
+              <div className="w-full h-96 rounded-2xl overflow-hidden relative shadow-2xl">
+                <img 
+                  src={image3d4} 
+                  alt="Professional Visual Solutions" 
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Floating Elements */}
+                <motion.div 
+                  className="absolute top-8 left-8 w-8 h-8 bg-[#00F0FF]/40 rounded-full"
+                  animate={{ 
+                    y: [0, -10, 0],
+                    opacity: [0.4, 0.8, 0.4]
+                  }}
+                  transition={{ 
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                <motion.div 
+                  className="absolute top-16 right-12 w-6 h-6 bg-[#0099FF]/40 rounded-full"
+                  animate={{ 
+                    y: [0, -8, 0],
+                    opacity: [0.3, 0.7, 0.3]
+                  }}
+                  transition={{ 
+                    duration: 2.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.5
+                  }}
+                />
+                <motion.div 
+                  className="absolute bottom-12 left-12 w-4 h-4 bg-[#00F0FF]/50 rounded-full"
+                  animate={{ 
+                    y: [0, -6, 0],
+                    opacity: [0.5, 0.9, 0.5]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1
+                  }}
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services Overview */}
       <section className="py-20 px-6 md:px-12 bg-gray-900 relative overflow-hidden">
         <div className="container-custom relative z-10">
           <motion.div
@@ -168,49 +373,117 @@ const Services = () => {
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Our Service{' '}
-              <span className="text-[#00F0FF]">Portfolio</span>
+              <span className="text-[#00F0FF]">Overview</span>
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed">
               Discover our comprehensive range of professional visual services designed to elevate your real estate marketing.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {/* Services List */}
+          <div className="space-y-16 max-w-6xl mx-auto">
             {services.map((service, index) => {
               const Icon = service.icon;
+              const isEven = index % 2 === 0;
+              
               return (
                 <motion.div
                   key={service.title}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group"
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                    isEven ? '' : 'lg:grid-flow-col-dense'
+                  }`}
                 >
-                  <div className="bg-gray-800/50 backdrop-blur-sm border border-[#00F0FF]/30 rounded-2xl p-6 md:p-8 hover:border-[#00F0FF] transition-all duration-500 hover:-translate-y-2 shadow-[0px_0px_15px_2px_rgba(0,240,255,0.15)] hover:shadow-[0px_0px_20px_5px_rgba(0,240,255,0.3)]">
-                    <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-2xl flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <Icon size={28} className="text-white md:hidden" />
-                      <Icon size={32} className="text-white hidden md:block" />
+                  {/* Content */}
+                  <motion.div
+                    initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className={`space-y-6 ${isEven ? 'lg:pr-8' : 'lg:pl-8 lg:col-start-2'}`}
+                  >
+                    {/* Service Icon & Title */}
+                    <div className="flex items-center space-x-4 mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-2xl flex items-center justify-center">
+                        <Icon size={32} className="text-white" />
+                      </div>
+                      <h3 className="text-3xl md:text-4xl font-bold text-white">
+                        {service.title}
+                      </h3>
                     </div>
                     
-                    <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4 group-hover:text-[#00F0FF] transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    
-                    <p className="text-gray-300 leading-relaxed mb-6 group-hover:text-gray-200 transition-colors duration-300">
+                    {/* Description */}
+                    <p className="text-lg text-gray-300 leading-relaxed mb-8">
                       {service.description}
                     </p>
 
                     {/* Features List */}
-                    <div className="space-y-2">
-                      {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-2">
-                          <CheckCircle size={16} className="text-[#00F0FF] flex-shrink-0" />
-                          <span className="text-sm text-gray-400">{feature}</span>
-                        </div>
-                      ))}
+                    <div className="space-y-4">
+                      <h4 className="text-xl font-semibold text-white mb-4">Key Features:</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {service.features.map((feature, featureIndex) => (
+                          <motion.div
+                            key={featureIndex}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4 + featureIndex * 0.1 }}
+                            viewport={{ once: true }}
+                            className="flex items-center space-x-3 p-3 bg-gray-800/50 rounded-xl hover:bg-gray-700/50 transition-colors duration-300"
+                          >
+                            <CheckCircle size={20} className="text-[#00F0FF] flex-shrink-0" />
+                            <span className="text-gray-300 font-medium">{feature}</span>
+                          </motion.div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  </motion.div>
+
+                  {/* Service Image */}
+                  <motion.div
+                    initial={{ opacity: 0, x: isEven ? 50 : -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    className={`relative ${isEven ? 'lg:col-start-2' : 'lg:col-start-1'}`}
+                  >
+                    <div className="w-full h-80 rounded-2xl overflow-hidden shadow-2xl">
+                      <img 
+                        src={image3d4} 
+                        alt={service.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    
+                    {/* Floating Elements */}
+                    <motion.div 
+                      className="absolute top-4 right-4 w-8 h-8 bg-[#00F0FF]/40 rounded-full"
+                      animate={{ 
+                        y: [0, -10, 0],
+                        opacity: [0.4, 0.8, 0.4]
+                      }}
+                      transition={{ 
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    />
+                    <motion.div 
+                      className="absolute bottom-4 left-4 w-6 h-6 bg-[#0099FF]/40 rounded-full"
+                      animate={{ 
+                        y: [0, -8, 0],
+                        opacity: [0.3, 0.7, 0.3]
+                      }}
+                      transition={{ 
+                        duration: 2.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 0.5
+                      }}
+                    />
+                  </motion.div>
                 </motion.div>
               );
             })}
