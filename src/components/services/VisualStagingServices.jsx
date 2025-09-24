@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Star, Users, DollarSign, Layout, Award } from 'lucide-react';
+import StagingImage from '../../assets/image3.jpg';
 
 const VisualStagingServices = () => {
   return (
@@ -47,17 +48,45 @@ const VisualStagingServices = () => {
         {/* Main Content */}
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Introduction */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <p className="text-lg text-gray-300 leading-relaxed mb-8">
-              At Voxelhaus consultancy, we bring properties to life through professional Visual Staging. Using advanced digital techniques, we transform empty, cluttered, or outdated property photos into beautifully furnished and styled spaces. This process helps potential buyers imagine the lifestyle a property offers, turning simple photographs into powerful sales tools.
-            </p>
-          </motion.div>
+         <motion.div
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+  className="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto mb-16"
+>
+  {/* Left Side: Image */}
+  <motion.div
+    initial={{ opacity: 0, x: -50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+    className="md:w-1/2"
+  >
+    <img
+        src={StagingImage} // Replace with your image path
+      alt="Visual Staging Example"
+  className="rounded-2xl shadow-xl w-full max-h-[400px] object-cover"
+    />
+  </motion.div>
+
+  {/* Right Side: Text */}
+  <motion.div
+    initial={{ opacity: 0, x: 50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+    className="md:w-1/2"
+  >
+    <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+      Transforming Properties into Stunning Spaces
+    </h3>
+    <p className="text-lg text-gray-300 leading-relaxed">
+      At Voxelhaus consultancy, we bring properties to life through professional Visual Staging. Using advanced digital techniques, we transform empty, cluttered, or outdated property photos into beautifully furnished and styled spaces. This process helps potential buyers imagine the lifestyle a property offers, turning simple photographs into powerful sales tools.
+    </p>
+  </motion.div>
+</motion.div>
+
 
           {/* Why Essential */}
           <motion.div
