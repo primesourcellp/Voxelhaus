@@ -40,7 +40,7 @@ const FloorPlanServices = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              className="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto"
+              className="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto "
             >
               Precise and Professional Floor Plan Redraws for Clear Property Layouts
             </motion.p>
