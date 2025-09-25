@@ -18,13 +18,47 @@ const Footer = () => {
   const navigate = useNavigate();
 
   const scrollToSection = (sectionId) => {
+    console.log('Navigating to section:', sectionId);
     navigate('/services');
+    
+    // Wait for navigation to complete and page to load
     setTimeout(() => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 100);
+      const scrollToElement = () => {
+        const element = document.getElementById(sectionId);
+        console.log('Element found:', element);
+        
+        if (element) {
+          // Calculate offset for navbar (assuming navbar height is around 80px)
+          const navbarHeight = 80;
+          const elementPosition = element.offsetTop - navbarHeight;
+          
+          window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
+          });
+          console.log('Scrolled to section:', sectionId);
+        } else {
+          console.error('Element not found:', sectionId);
+          // Try again after a longer delay
+          setTimeout(() => {
+            const retryElement = document.getElementById(sectionId);
+            if (retryElement) {
+              const retryPosition = retryElement.offsetTop - 80;
+              window.scrollTo({
+                top: retryPosition,
+                behavior: 'smooth'
+              });
+              console.log('Retry successful for section:', sectionId);
+            } else {
+              console.error('Retry failed for section:', sectionId);
+            }
+          }, 1000);
+        }
+      };
+      
+      // Try immediately
+      scrollToElement();
+    }, 300);
   };
 
   const handleQuickLinkClick = (path) => {
