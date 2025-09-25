@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Star, Users, Clock, DollarSign } from 'lucide-react';
-import image3d2 from '../../assets/3d-image_2.jpg';
+import image3d2 from '../../assets/img1.png';
 
 const ColorCastRemovalServices = () => {
   return (

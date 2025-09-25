@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Star, Award, Layout, Clock, Users } from 'lucide-react';
-import image3d3 from '../../assets/3d_image_3.jpg';
+import image3d3 from '../../assets/img4.png';
 
 const SkyReplacementServices = () => {
   return (

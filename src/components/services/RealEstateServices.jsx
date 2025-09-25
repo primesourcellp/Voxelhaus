@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Star, Users, Clock, Award } from 'lucide-react';
-import image3d4 from '../../assets/3d_image_4.jpg';
+import image3d4 from '../../assets/img3.png';
 
 const RealEstateServices = () => {
   return (

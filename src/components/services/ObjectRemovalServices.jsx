@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Award, Home, Star, Users } from 'lucide-react';
-import image3d1 from '../../assets/3d_image_1.jpg';
+import image3d1 from '../../assets/img2.png';
 
 const ObjectRemovalServices = () => {
   return (
