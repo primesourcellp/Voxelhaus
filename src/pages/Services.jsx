@@ -13,14 +13,9 @@ import {
   Users,
   Clock,
   Award,
-  DollarSign,
   MessageSquare,
   Shield,
   Zap,
-  Eye,
-  Target,
-  Handshake,
-  Building,
   Lightbulb,
   Heart,
   TrendingUp
@@ -81,32 +76,26 @@ const Services = () => {
 
   const whyChooseUs = [
     {
-      icon: Eye,
       title: "Unmatched Visual Impact",
       description: "We don't just create images; we create a compelling visual narrative for your property. Our enhancements transform standard photos into engaging, memorable visuals that capture a buyer's attention immediately."
     },
     {
-      icon: Target,
       title: "Precision and Accuracy",
       description: "Our floor plans are renowned for their meticulous detail and accuracy. We provide buyers with the confidence to understand a property's layout and flow, reducing the need for multiple in-person viewings."
     },
     {
-      icon: Clock,
       title: "Accelerated Marketing Timelines",
       description: "Time is critical in real estate. Our efficient process and fast turnaround times mean you get your high-quality visuals quickly, allowing you to list your properties sooner and meet your marketing deadlines with ease."
     },
     {
-      icon: DollarSign,
       title: "Cost-Effective Excellence",
       description: "Investing in professional visuals shouldn't break the bank. Our services are a high-value, affordable solution that provides a significant return on investment by attracting more potential buyers and helping you achieve a better sales price."
     },
     {
-      icon: Handshake,
       title: "Seamless Collaboration",
       description: "We make the process simple. Just send us your materials—photos, sketches, or drafts—and our team takes it from there. We work closely with you through a simple feedback and revision loop to ensure the final product is exactly what you envisioned."
     },
     {
-      icon: Building,
       title: "Full-Service Visual Solutions",
       description: "From foundational floor plans to polished retouched photos and captivating virtual staging, we offer a complete suite of services under one roof."
     }
@@ -320,34 +309,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 px-6 md:px-12 bg-gray-800 relative overflow-hidden">
-        <div className="container-custom relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="flex justify-center mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-full flex items-center justify-center">
-                      <Icon size={32} className="text-white" />
-                    </div>
-                  </div>
-                  <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-gray-300">{stat.label}</div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Services Overview */}
       <section className="py-20 px-6 md:px-12 bg-gray-900 relative overflow-hidden">
@@ -368,7 +330,7 @@ const Services = () => {
             >
               Our Service{' '}
               <span className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] bg-clip-text text-transparent">
-                Portfolio
+                Overview
               </span>
             </motion.h2>
             <motion.p 
@@ -460,26 +422,24 @@ const Services = () => {
             </p>
           </motion.div>
 
-          <div className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {whyChooseUs.map((item, index) => {
-              const Icon = item.icon;
               return (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-start space-x-6 p-6 bg-gray-900/50 rounded-2xl hover:bg-gray-900/70 transition-all duration-300"
+                  className="p-8 bg-gradient-to-br from-gray-900/60 via-gray-800/40 to-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-2xl hover:border-[#00F0FF]/30 hover:bg-gray-900/70 transition-all duration-300 group"
                 >
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-xl flex items-center justify-center">
-                      <Icon size={32} className="text-white" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-3">{item.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{item.description}</p>
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#00F0FF] transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                      {item.description}
+                    </p>
                   </div>
                 </motion.div>
               );
@@ -518,13 +478,7 @@ const Services = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.button>
               
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border-2 border-[#00F0FF] text-[#00F0FF] font-bold rounded-xl hover:bg-[#00F0FF] hover:text-white transition-all duration-300"
-              >
-                View Our Portfolio
-              </motion.button>
+              
             </div>
           </motion.div>
         </div>

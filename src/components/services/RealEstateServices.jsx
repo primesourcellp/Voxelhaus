@@ -266,7 +266,7 @@ const RealEstateServices = () => {
               We offer a wide range of tailored editing services designed to meet the needs of the modern real estate market. Our expertise ensures that every photo not only looks attractive but also supports faster sales and stronger buyer connections.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-12">
               {[
                 {
                   title: "Advanced Image Retouching & Corrections",
@@ -293,12 +293,18 @@ const RealEstateServices = () => {
                   key={service.title}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-[#00F0FF]/50 transition-all duration-300"
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-[#00F0FF]/50 transition-all duration-300"
                 >
-                  <h4 className="text-xl font-bold text-white mb-4">{service.title}</h4>
-                  <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                  <div className="space-y-4">
+                    <h4 className="text-2xl font-bold text-white">{service.title}</h4>
+                    <p className="text-lg text-gray-300 leading-relaxed">{service.description}</p>
+                    <div className="flex items-center space-x-2 text-[#00F0FF]">
+                      <CheckCircle size={20} />
+                      <span className="font-semibold">Professional Quality</span>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>

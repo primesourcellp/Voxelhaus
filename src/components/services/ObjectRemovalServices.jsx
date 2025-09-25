@@ -1,51 +1,133 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Award, Home, Star, Users } from 'lucide-react';
+import image3d1 from '../../assets/3d_image_1.jpg';
 
 const ObjectRemovalServices = () => {
   return (
-    <section className="py-20 px-6 md:px-12 bg-gray-800 relative overflow-hidden">
-      <div className="container-custom relative z-10">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center max-w-5xl mx-auto mb-16"
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center space-x-3 mb-8"
-          >
-            <div className="w-2 h-2 bg-[#00F0FF] rounded-full animate-pulse"></div>
-            <span className="text-[#00F0FF] font-semibold text-lg tracking-wider uppercase">Object Removal Services</span>
-            <div className="w-2 h-2 bg-[#00F0FF] rounded-full animate-pulse"></div>
-          </motion.div>
-          
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">
-            Real Estate Object{' '}
-            <span className="bg-gradient-to-r from-[#00F0FF] via-[#0099FF] to-[#00F0FF] bg-clip-text text-transparent">
-              Removal Services
-            </span>
-          </h2>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto"
-          >
-            Showcasing Properties Without Distractions
-          </motion.p>
-        </motion.div>
+    <div className="min-h-screen bg-slate-900 text-white">
+      {/* Hero Section */}
+      <section 
+        className="min-h-screen flex items-center relative overflow-x-hidden w-full"
+        style={{
+          backgroundImage: `url(${image3d1})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+        
+        {/* Animated Background Elements */}
+        <motion.div 
+          className="absolute top-20 left-20 w-32 h-32 bg-[#00F0FF]/10 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.6, 0.3]
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-20 right-20 w-40 h-40 bg-[#0099FF]/10 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+            opacity: [0.4, 0.7, 0.4]
+          }}
+          transition={{ 
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        <div className="container-custom relative z-10 py-20">
+          <div className="max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ 
+                opacity: 1, 
+                x: 0,
+                y: [0, -5, 0]
+              }}
+              transition={{ 
+                opacity: { duration: 0.8 },
+                x: { duration: 0.8 },
+                y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+              }}
+              className="space-y-8 px-4 lg:px-8"
+            >
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <motion.h1 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+                  >
+                    <motion.span
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4 }}
+                      className="block"
+                    >
+                      Real Estate Object{' '}
+                    </motion.span>
+                    <motion.span 
+                      className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] bg-clip-text text-transparent block"
+                      style={{ textShadow: '0 0 30px rgba(0, 240, 255, 0.5)' }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.6 }}
+                      whileHover={{ 
+                        scale: 1.05,
+                        textShadow: '0 0 40px rgba(0, 240, 255, 0.8)'
+                      }}
+                    >
+                      Removal Services
+                    </motion.span>
+                  </motion.h1>
+                </div>
+                
+                <div className="space-y-6">
+                  <motion.p 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.8 }}
+                    className="text-xl text-gray-300 leading-relaxed"
+                    whileHover={{ 
+                      scale: 1.02,
+                      color: '#ffffff'
+                    }}
+                  >
+                    Showcasing Properties Without Distractions
+                  </motion.p>
+                  
+                  <motion.p 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 1 }}
+                    className="text-lg text-gray-400 leading-relaxed"
+                  >
+                    In real estate, visuals are everything. A cluttered room, distracting wires, personal belongings, or unnecessary objects in a property photo can take the focus away from the actual space.
+                  </motion.p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
-        {/* Main Content */}
-        <div className="max-w-6xl mx-auto space-y-16">
+      {/* Main Content */}
+      <section className="py-20 px-6 md:px-12 bg-gray-800 relative overflow-hidden">
+        <div className="container-custom relative z-10">
+          {/* Main Content */}
+          <div className="max-w-6xl mx-auto space-y-16">
           {/* Introduction */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -244,9 +326,10 @@ const ObjectRemovalServices = () => {
               At Voxelhaus consultancy, we understand that the smallest details make the biggest difference in real estate marketing. Our object removal services are designed to transform ordinary property photos into professional, buyer-focused visuals.
             </p>
           </motion.div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
