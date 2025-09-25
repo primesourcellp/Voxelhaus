@@ -351,6 +351,7 @@ const Services = () => {
                 <Link
                   to={service.path}
                   key={service.title}
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 50, scale: 0.9 }}

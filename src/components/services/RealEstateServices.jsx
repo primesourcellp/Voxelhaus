@@ -136,59 +136,6 @@ const RealEstateServices = () => {
               }}
               className="relative px-4 lg:px-8"
             >
-              <div className="relative">
-                {/* Main Image Container */}
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="w-full h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
-                >
-                  <img 
-                    src={image3d4} 
-                    alt="Real Estate Services" 
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-                
-                {/* Floating Elements */}
-                <motion.div 
-                  className="absolute top-8 left-8 w-8 h-8 bg-[#00F0FF]/40 rounded-full"
-                  animate={{ 
-                    y: [0, -10, 0],
-                    opacity: [0.4, 0.8, 0.4]
-                  }}
-                  transition={{ 
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
-                <motion.div 
-                  className="absolute bottom-8 right-8 w-6 h-6 bg-[#0099FF]/40 rounded-full"
-                  animate={{ 
-                    y: [0, -8, 0],
-                    opacity: [0.3, 0.7, 0.3]
-                  }}
-                  transition={{ 
-                    duration: 2.5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 0.5
-                  }}
-                />
-                <motion.div 
-                  className="absolute top-1/2 right-4 w-4 h-4 bg-[#00F0FF]/30 rounded-full"
-                  animate={{ 
-                    scale: [1, 1.2, 1],
-                    opacity: [0.3, 0.6, 0.3]
-                  }}
-                  transition={{ 
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1
-                  }}
-                />
-              </div>
             </motion.div>
           </div>
         </div>
