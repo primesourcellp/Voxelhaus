@@ -14,6 +14,14 @@ import Services from './pages/Services';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 
+// Service Pages
+import RealEstatePage from './pages/RealEstatePage';
+import ObjectRemovalPage from './pages/ObjectRemovalPage';
+import ColorCastRemovalPage from './pages/ColorCastRemovalPage';
+import SkyReplacementPage from './pages/SkyReplacementPage';
+import FloorPlansPage from './pages/FloorPlansPage';
+import VirtualStagingPage from './pages/VirtualStagingPage';
+
 // ScrollToTop component to handle page navigation
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -47,6 +55,14 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            
+            {/* Service Pages */}
+            <Route path="/real-estate" element={<RealEstatePage />} />
+            <Route path="/object-removal" element={<ObjectRemovalPage />} />
+            <Route path="/color-cast-removal" element={<ColorCastRemovalPage />} />
+            <Route path="/sky-replacement" element={<SkyReplacementPage />} />
+            <Route path="/floor-plans" element={<FloorPlansPage />} />
+            <Route path="/virtual-staging" element={<VirtualStagingPage />} />
           </Routes>
         </main>
         <Footer />

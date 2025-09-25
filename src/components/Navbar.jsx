@@ -9,6 +9,7 @@ import 'aos/dist/aos.css';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -44,9 +45,18 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', path: '/', icon: Home },
     { name: 'About Us', path: '/about', icon: Users },
-    { name: 'Services', path: '/services', icon: Briefcase },
+    { name: 'Services', path: '/services', icon: Briefcase, hasDropdown: true },
     { name: 'Gallery', path: '/gallery', icon: Images },
     { name: 'Contact', path: '/contact', icon: Phone },
+  ];
+
+  const servicesItems = [
+    { name: 'Real Estate Services', path: '/real-estate' },
+    { name: 'Object Removal', path: '/object-removal' },
+    { name: 'Color Cast Removal', path: '/color-cast-removal' },
+    { name: 'Sky Replacement', path: '/sky-replacement' },
+    { name: 'Floor Plans', path: '/floor-plans' },
+    { name: 'Virtual Staging', path: '/virtual-staging' },
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -118,24 +128,78 @@ const Navbar = () => {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       data-aos="fade-left"
                       data-aos-delay={200 + index * 100}
+                      className="relative"
                     >
-                      <Link
-                        to={item.path}
-                        onClick={() => scrollToSection(item.path)}
-                        className="relative group px-6 py-3 rounded-lg transition-all duration-300"
-                      >
-                        <span
-                          className={`relative z-10 text-sm font-semibold transition-all duration-300 ${
-                            isActive
-                              ? 'text-white'
-                              : 'text-white/90 hover:text-[#0099FF]'
-                          }`}
-                          style={{
-                            textShadow: isActive ? '0 0 15px rgba(0, 153, 255, 0.8)' : '0 0 5px rgba(255, 255, 255, 0.3)'
-                          }}
+                      {item.hasDropdown ? (
+                        <div
+                          onMouseEnter={() => setIsServicesOpen(true)}
+                          onMouseLeave={() => setIsServicesOpen(false)}
+                          className="relative"
                         >
-                          {item.name}
-                        </span>
+                          <Link
+                            to={item.path}
+                            onClick={() => scrollToSection(item.path)}
+                            className="relative group px-6 py-3 rounded-lg transition-all duration-300"
+                          >
+                            <span
+                              className={`relative z-10 text-sm font-semibold transition-all duration-300 ${
+                                isActive || isServicesOpen
+                                  ? 'text-white'
+                                  : 'text-white/90 hover:text-[#0099FF]'
+                              }`}
+                              style={{
+                                textShadow: isActive || isServicesOpen ? '0 0 15px rgba(0, 153, 255, 0.8)' : '0 0 5px rgba(255, 255, 255, 0.3)'
+                              }}
+                            >
+                              {item.name}
+                            </span>
+                          </Link>
+
+                          {/* Services Dropdown */}
+                          <AnimatePresence>
+                            {isServicesOpen && (
+                              <motion.div
+                                initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                                transition={{ duration: 0.2 }}
+                                className="absolute top-full left-0 mt-2 w-64 bg-white/10 backdrop-blur-xl rounded-xl shadow-2xl border border-white/20 overflow-hidden"
+                              >
+                                {servicesItems.map((service, serviceIndex) => (
+                                  <Link
+                                    key={service.name}
+                                    to={service.path}
+                                    onClick={() => {
+                                      setIsServicesOpen(false);
+                                      scrollToSection(service.path);
+                                    }}
+                                    className="block px-6 py-4 text-sm text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200 border-b border-white/10 last:border-b-0"
+                                  >
+                                    {service.name}
+                                  </Link>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      ) : (
+                        <Link
+                          to={item.path}
+                          onClick={() => scrollToSection(item.path)}
+                          className="relative group px-6 py-3 rounded-lg transition-all duration-300"
+                        >
+                          <span
+                            className={`relative z-10 text-sm font-semibold transition-all duration-300 ${
+                              isActive
+                                ? 'text-white'
+                                : 'text-white/90 hover:text-[#0099FF]'
+                            }`}
+                            style={{
+                              textShadow: isActive ? '0 0 15px rgba(0, 153, 255, 0.8)' : '0 0 5px rgba(255, 255, 255, 0.3)'
+                            }}
+                          >
+                            {item.name}
+                          </span>
 
                         {/* Neon Glow Hover */}
                         <motion.div
@@ -160,7 +224,8 @@ const Navbar = () => {
                             transition={{ duration: 0.5 }}
                           />
                         )}
-                      </Link>
+                        </Link>
+                      )}
                     </motion.div>
                   );
                 })}
@@ -244,7 +309,7 @@ const Navbar = () => {
             >
               <div className="p-6 h-full flex flex-col py-30">
                 {/* Mobile Navigation */}
-                <div className="space-y-3 flex-1">
+                <div className="space-y-3 flex-1 overflow-y-auto max-h-[calc(100vh-120px)]">
                   {navItems.map((item, index) => {
                     const Icon = item.icon;
                     const isActive = location.pathname === item.path;
@@ -256,32 +321,102 @@ const Navbar = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.3 + index * 0.1 }}
                       >
-                        <Link
-                          to={item.path}
-                          onClick={() => scrollToSection(item.path)}
-                          className={`relative group flex items-center justify-between p-6 rounded-2xl transition-all duration-300 w-full ${
-                            isActive
-                              ? 'text-white bg-white/20'
-                              : 'text-white/95 hover:text-white hover:bg-white/15'
-                          }`}
-                        >
-                          <span 
-                            className="font-bold text-xl"
-                            style={{
-                              textShadow: isActive ? '0 0 10px rgba(0, 153, 255, 0.6)' : '0 0 3px rgba(255, 255, 255, 0.4)'
-                            }}
+                        {item.hasDropdown ? (
+                          <div className="space-y-2">
+                              <Link
+                                to={item.path}
+                                onClick={() => {
+                                  setIsOpen(false);
+                                  scrollToSection(item.path);
+                                }}
+                                className={`relative group flex items-center justify-between p-6 rounded-2xl transition-all duration-300 w-full ${
+                                  isActive
+                                    ? 'text-white bg-white/20'
+                                    : 'text-white/95 hover:text-white hover:bg-white/15'
+                                }`}
+                              >
+                                <span 
+                                  className="font-bold text-xl"
+                                  style={{
+                                    textShadow: isActive ? '0 0 10px rgba(0, 153, 255, 0.6)' : '0 0 3px rgba(255, 255, 255, 0.4)'
+                                  }}
+                                >
+                                  {item.name}
+                                </span>
+                                
+                                {/* Arrow Icon */}
+                                <motion.div
+                                  className="text-white/70 group-hover:text-[#0099FF] transition-colors duration-300"
+                                  animate={{ rotate: isServicesOpen ? 90 : 0 }}
+                                  transition={{ duration: 0.2 }}
+                                >
+                                  <Icon size={20} />
+                                </motion.div>
+                              </Link>
+                              
+                              <button
+                                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                                className="w-full text-left text-sm text-white/70 hover:text-white transition-colors duration-200 px-6 py-2"
+                              >
+                                View All Services ↓
+                              </button>
+
+                            {/* Services Dropdown */}
+                            <AnimatePresence>
+                              {isServicesOpen && (
+                                <motion.div
+                                  initial={{ opacity: 0, height: 0 }}
+                                  animate={{ opacity: 1, height: 'auto' }}
+                                  exit={{ opacity: 0, height: 0 }}
+                                  transition={{ duration: 0.3 }}
+                                  className="overflow-hidden"
+                                >
+                                  <div className="pl-6 space-y-2">
+                                    {servicesItems.map((service, serviceIndex) => (
+                                      <Link
+                                        key={service.name}
+                                        to={service.path}
+                                        onClick={() => {
+                                          setIsServicesOpen(false);
+                                          scrollToSection(service.path);
+                                        }}
+                                        className="block p-4 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200"
+                                      >
+                                        {service.name}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+                        ) : (
+                          <Link
+                            to={item.path}
+                            onClick={() => scrollToSection(item.path)}
+                            className={`relative group flex items-center justify-between p-6 rounded-2xl transition-all duration-300 w-full ${
+                              isActive
+                                ? 'text-white bg-white/20'
+                                : 'text-white/95 hover:text-white hover:bg-white/15'
+                            }`}
                           >
-                            {item.name}
-                          </span>
-                          
-                          {/* Arrow Icon */}
-                          <motion.div
-                            className="text-white/70 group-hover:text-[#0099FF] transition-colors duration-300"
-                            animate={{ x: isActive ? 8 : 0 }}
-                            transition={{ duration: 0.2 }}
-                          >
-                            <Icon size={20} />
-                          </motion.div>
+                            <span 
+                              className="font-bold text-xl"
+                              style={{
+                                textShadow: isActive ? '0 0 10px rgba(0, 153, 255, 0.6)' : '0 0 3px rgba(255, 255, 255, 0.4)'
+                              }}
+                            >
+                              {item.name}
+                            </span>
+                            
+                            {/* Arrow Icon */}
+                            <motion.div
+                              className="text-white/70 group-hover:text-[#0099FF] transition-colors duration-300"
+                              animate={{ x: isActive ? 8 : 0 }}
+                              transition={{ duration: 0.2 }}
+                            >
+                              <Icon size={20} />
+                            </motion.div>
 
                           {/* Active Indicator */}
                           {isActive && (
@@ -304,7 +439,8 @@ const Navbar = () => {
                                  boxShadow: '0 0 30px rgba(0, 153, 255, 0.4)',
                                }}
                           />
-                        </Link>
+                          </Link>
+                        )}
                       </motion.div>
                     );
                   })}

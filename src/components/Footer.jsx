@@ -70,12 +70,12 @@ const Footer = () => {
   };
 
   const services = [
-    { name: 'Real Estate', sectionId: 'real-estate' },
-    { name: 'Object Removal', sectionId: 'object-removal' },
-    { name: '3D Visualization', sectionId: 'virtual-staging' },
-    { name: 'Sky Replacement', sectionId: 'sky-replacement' },
-    { name: 'Color Cast Removal', sectionId: 'color-cast-removal' },
-    { name: 'Floor Plans 3D & 2D', sectionId: 'floor-plans' }
+    { name: 'Real Estate', path: '/real-estate' },
+    { name: 'Object Removal', path: '/object-removal' },
+    { name: 'Color Cast Removal', path: '/color-cast-removal' },
+    { name: 'Sky Replacement', path: '/sky-replacement' },
+    { name: 'Floor Plans', path: '/floor-plans' },
+    { name: 'Virtual Staging', path: '/virtual-staging' }
   ];
 
   const quickLinks = [
@@ -135,13 +135,14 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <button
-                    onClick={() => scrollToSection(service.sectionId)}
+                  <Link
+                    to={service.path}
+                    onClick={() => handleQuickLinkClick(service.path)}
                     className="text-gray-300 hover:text-[#00d4ff] transition-colors duration-300 flex items-center group w-full text-left"
                   >
                     <ArrowRight size={16} className="mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                     {service.name}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
