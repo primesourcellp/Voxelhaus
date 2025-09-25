@@ -11,7 +11,7 @@ import {
   Linkedin,
   ArrowRight
 } from 'lucide-react';
-import logoImage from '../assets/logo.png';
+import logoImage from '../assets/Voxelhaus.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -101,7 +101,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-16 h-16 rounded-lg overflow-hidden ml-4">
+              <div className="w-24 h-24 rounded-lg overflow-hidden ml-4">
                 <img 
                   src={logoImage} 
                   alt="Voxelhaus Logo" 

@@ -103,7 +103,7 @@ const Navbar = () => {
               >
                 <Link to="/" className="flex items-center">
                   <div className="relative">
-                    <div className="w-16 h-16 rounded-xl overflow-hidden">
+                    <div className="w-25 h-25 rounded-xl overflow-hidden">
                       <img 
                         src={logoImage} 
                         alt="Voxelhaus Logo" 
@@ -246,7 +246,7 @@ const Navbar = () => {
               >
                 <Link to="/" className="flex items-center">
                   <div className="relative">
-                    <div className="w-10 h-10 rounded-xl overflow-hidden">
+                    <div className="w-20 h-20 rounded-xl overflow-hidden">
                       <img 
                         src={logoImage} 
                         alt="Voxelhaus Logo" 
@@ -446,29 +446,6 @@ const Navbar = () => {
                   })}
                 </div>
 
-                {/* Mobile CTA */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 }}
-                  className="pt-8 border-t border-white/20"
-                >
-                  <Link
-                    to="/contact"
-                    onClick={() => setIsOpen(false)}
-                    className="w-full flex items-center justify-center space-x-4 p-6 rounded-2xl font-bold text-xl transition-all duration-300 group relative overflow-hidden"
-                    style={{
-                                 background: 'linear-gradient(135deg, #0099FF 0%, #0066CC 100%)',
-                      boxShadow: '0 0 40px rgba(0, 240, 255, 0.5)',
-                    }}
-                  >
-                    <Phone size={24} className="group-hover:scale-110 transition-transform duration-300" />
-                    <span>Get Free Quote</span>
-                    
-                    {/* Animated background effect */}
-                    <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -skew-x-12 translate-x-full group-hover:translate-x-0" />
-                  </Link>
-                </motion.div>
               </div>
             </motion.div>
           </motion.div>
