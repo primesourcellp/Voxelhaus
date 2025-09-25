@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Star, Award, Users, DollarSign, Home, Layout, Eye } from 'lucide-react';
-import image3d1 from '../../assets/floor.png';
+import image3d1 from '../../assets/floor2.png';
 
 const FloorPlanServices = () => {
   return (
