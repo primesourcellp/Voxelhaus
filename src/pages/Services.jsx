@@ -20,7 +20,8 @@ import {
   Heart,
   TrendingUp
 } from 'lucide-react';
-import image3d4 from '../assets/3d_image_4.jpg';
+
+import heroBg from '../assets/img5.png';
 
 const Services = () => {
   const services = [
@@ -113,7 +114,7 @@ const Services = () => {
       <section 
         className="min-h-screen flex items-center relative overflow-x-hidden w-full"
         style={{
-          backgroundImage: `url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"%3E%3Cdefs%3E%3Cpattern id="services-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"%3E%3Crect width="100" height="100" fill="%23111127"/%3E%3Cpath d="M0 0L100 100M100 0L0 100" stroke="%2300F0FF" stroke-width="0.5" opacity="0.1"/%3E%3Ccircle cx="50" cy="50" r="20" fill="none" stroke="%2300F0FF" stroke-width="0.3" opacity="0.2"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width="1200" height="800" fill="url(%23services-pattern)"/%3E%3C/svg%3E')`,
+          backgroundImage: `url(${heroBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
@@ -282,29 +283,7 @@ const Services = () => {
             </motion.div>
 
             {/* Right Content - Image */}
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img 
-                  src={image3d4} 
-                  alt="Professional Visual Solutions" 
-                  className="w-full h-96 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="text-white text-xl font-bold mb-2">Transform Your Listings</h3>
-                  <p className="text-white/90 text-sm">Professional visual solutions that sell properties faster</p>
-                </div>
-              </div>
-              
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-full opacity-20 blur-xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-r from-[#0099FF] to-[#00F0FF] rounded-full opacity-20 blur-xl"></div>
-            </motion.div>
+           
           </div>
         </div>
       </section>
