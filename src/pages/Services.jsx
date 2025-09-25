@@ -22,10 +22,8 @@ import RealEstateServices from '../components/services/RealEstateServices';
 import ObjectRemovalServices from '../components/services/ObjectRemovalServices';
 import ColorCastRemovalServices from '../components/services/ColorCastRemovalServices';
 import SkyReplacementServices from '../components/services/SkyReplacementServices';
-import Visualization3DServices from '../components/services/Visualization3DServices';
-import FloorPlan2DServices from '../components/services/FloorPlan2DServices';
-import FloorPlan3DServices from '../components/services/FloorPlan3DServices';
-import VisualStagingServices from '../components/services/VisualStagingServices';
+import FloorPlanServices from '../components/services/FloorPlanServices';
+import VirtualStagingServices from '../components/services/VirtualStagingServices';
 
 const Services = () => {
   const services = [
@@ -614,17 +612,11 @@ const Services = () => {
       {/* Sky Replacement Services Section */}
       <SkyReplacementServices />
 
-      {/* 3D Visualization Services Section */}
-      <Visualization3DServices />
+      {/* Floor Plan Services Section (2D & 3D) */}
+      <FloorPlanServices />
 
-      {/* 2D Floor Plan Redraw Services Section */}
-      <FloorPlan2DServices />
-
-      {/* 3D Floor Plan Redraw Services Section */}
-      <FloorPlan3DServices />
-
-      {/* Visual Staging Services Section */}
-      <VisualStagingServices />
+      {/* Virtual Staging Services Section (3D Visualization & Visual Staging) */}
+      <VirtualStagingServices />
 
       {/* CTA Section */}
       <section className="py-20 px-6 md:px-12 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 relative overflow-hidden">

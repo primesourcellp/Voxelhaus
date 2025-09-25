@@ -12,7 +12,8 @@ const RealEstateServices = () => {
         style={{
           backgroundImage: `url(${image3d4})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
+          backgroundAttachment: "fixed",
         }}
       >
         {/* Dark Overlay with Gradient */}

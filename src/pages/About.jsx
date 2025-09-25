@@ -156,9 +156,12 @@ const About = () => {
         style={{
           backgroundImage: `url(${aboutHeroImage})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
+          backgroundAttachment: "fixed",
         }}
       >
+        <div className="absolute inset-0 bg-black/50"></div>
+
         {/* Dark Overlay with Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/60"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
