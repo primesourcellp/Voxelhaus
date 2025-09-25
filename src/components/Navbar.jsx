@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, Users, Briefcase, Images, MessageSquare, Phone } from 'lucide-react';
-import logoImage from '../assets/logo.png';
+import logoImage from '../assets/Voxelhaus.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
