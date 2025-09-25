@@ -24,6 +24,7 @@ import {
   Mail
 } from 'lucide-react';
 import heroImage from '../assets/hero.jpg';
+import houseAnimationGif from '../assets/output-onlinegiftools.gif';
 
 const Home = () => {
   const fadeInUp = {
@@ -337,9 +338,22 @@ const Home = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative"
+              className="relative flex items-center justify-center"
             >
-             
+              <div className="w-full max-w-lg relative">
+                <img
+                  src={houseAnimationGif}
+                  alt="3D House Construction Animation"
+                  className="w-full h-auto rounded-2xl shadow-2xl"
+                  style={{
+                    filter: 'drop-shadow(0 0 20px rgba(0, 0, 0, 0.3))',
+                    maxHeight: '500px',
+                    objectFit: 'cover'
+                  }}
+                />
+                
+                
+              </div>
             </motion.div>
           </div>
         </div>
