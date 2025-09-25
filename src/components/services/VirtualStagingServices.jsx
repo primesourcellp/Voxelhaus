@@ -1,50 +1,131 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Home, Star, Clock, Users, Layout, DollarSign, Award, Eye, Palette, Zap, Heart } from 'lucide-react';
+import image3d4 from '../../assets/virtual3.png';
 
 const VirtualStagingServices = () => {
   return (
     <div>
       {/* 3D Visualization Services */}
+      <section 
+        className="min-h-screen flex items-center relative overflow-x-hidden w-full"
+        style={{
+          backgroundImage: `url(${image3d4})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+        
+        {/* Animated Background Elements */}
+        <motion.div 
+          className="absolute top-20 left-20 w-32 h-32 bg-[#00F0FF]/10 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.6, 0.3]
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-20 right-20 w-40 h-40 bg-[#0099FF]/10 rounded-full blur-3xl"
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+            opacity: [0.4, 0.7, 0.4]
+          }}
+          transition={{ 
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        <div className="container-custom relative z-10 py-20">
+          <div className="max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ 
+                opacity: 1, 
+                x: 0,
+                y: [0, -5, 0]
+              }}
+              transition={{ 
+                opacity: { duration: 0.8 },
+                x: { duration: 0.8 },
+                y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+              }}
+              className="space-y-8 px-4 lg:px-8"
+            >
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <motion.h1 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+                  >
+                    <motion.span
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4 }}
+                      className="block"
+                    >
+                      3D{' '}
+                    </motion.span>
+                    <motion.span 
+                      className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] bg-clip-text text-transparent block"
+                      style={{ textShadow: '0 0 30px rgba(0, 240, 255, 0.5)' }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.6 }}
+                      whileHover={{ 
+                        scale: 1.05,
+                        textShadow: '0 0 40px rgba(0, 240, 255, 0.8)'
+                      }}
+                    >
+                      Visualization Services
+                    </motion.span>
+                  </motion.h1>
+                </div>
+                
+                <div className="space-y-6">
+                  <motion.p 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.8 }}
+                    className="text-xl text-gray-300 leading-relaxed"
+                    whileHover={{ 
+                      scale: 1.02,
+                      color: '#ffffff'
+                    }}
+                  >
+                    Bringing Your Property Concepts to Life with Stunning Visuals
+                  </motion.p>
+                  
+                  <motion.p 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 1 }}
+                    className="text-lg text-gray-400 leading-relaxed"
+                  >
+                    In a competitive property market, static images and floor plans often fail to capture the buyer's imagination. 3D visualization offers a more engaging and realistic representation of properties.
+                  </motion.p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content */}
       <section className="py-20 px-6 md:px-12 bg-gray-900 relative overflow-hidden">
         <div className="container-custom relative z-10">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center max-w-5xl mx-auto mb-16"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center space-x-3 mb-8"
-            >
-              <div className="w-2 h-2 bg-[#00F0FF] rounded-full animate-pulse"></div>
-              <span className="text-[#00F0FF] font-semibold text-lg tracking-wider uppercase">3D Visualization</span>
-              <div className="w-2 h-2 bg-[#00F0FF] rounded-full animate-pulse"></div>
-            </motion.div>
-            
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">
-              3D{' '}
-              <span className="bg-gradient-to-r from-[#00F0FF] via-[#0099FF] to-[#00F0FF] bg-clip-text text-transparent">
-                Visualization Services
-              </span>
-            </h2>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto"
-            >
-              Bringing Your Property Concepts to Life with Stunning Visuals
-            </motion.p>
-          </motion.div>
 
           {/* Main Content */}
           <div className="max-w-6xl mx-auto space-y-16">
