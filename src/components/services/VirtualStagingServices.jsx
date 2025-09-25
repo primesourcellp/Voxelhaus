@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, Home, Star, Clock, Users, Layout, DollarSign, Award, Eye, Palette, Zap } from 'lucide-react';
+import { CheckCircle, Home, Star, Clock, Users, Layout, DollarSign, Award, Eye, Palette, Zap, Heart } from 'lucide-react';
 
 const VirtualStagingServices = () => {
   return (

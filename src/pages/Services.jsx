@@ -22,7 +22,7 @@ import RealEstateServices from '../components/services/RealEstateServices';
 import ObjectRemovalServices from '../components/services/ObjectRemovalServices';
 import ColorCastRemovalServices from '../components/services/ColorCastRemovalServices';
 import SkyReplacementServices from '../components/services/SkyReplacementServices';
-import FloorPlanServices from '../components/services/FloorPlanServices';
+import FloorPlanServices from '../components/services/FloorPlanServices_2d_3d';
 import VirtualStagingServices from '../components/services/VirtualStagingServices';
 
 const Services = () => {
@@ -601,22 +601,34 @@ const Services = () => {
       </section>
 
       {/* Real Estate Services Section */}
-      <RealEstateServices />
+      <div id="real-estate">
+        <RealEstateServices />
+      </div>
 
       {/* Real Estate Object Removal Services Section */}
-      <ObjectRemovalServices />
+      <div id="object-removal">
+        <ObjectRemovalServices />
+      </div>
 
       {/* Color Cast Removal Services Section */}
-      <ColorCastRemovalServices />
+      <div id="color-cast-removal">
+        <ColorCastRemovalServices />
+      </div>
 
       {/* Sky Replacement Services Section */}
-      <SkyReplacementServices />
+      <div id="sky-replacement">
+        <SkyReplacementServices />
+      </div>
 
       {/* Floor Plan Services Section (2D & 3D) */}
-      <FloorPlanServices />
+      <div id="floor-plans">
+        <FloorPlanServices />
+      </div>
 
       {/* Virtual Staging Services Section (3D Visualization & Visual Staging) */}
-      <VirtualStagingServices />
+      <div id="virtual-staging">
+        <VirtualStagingServices />
+      </div>
 
       {/* CTA Section */}
       <section className="py-20 px-6 md:px-12 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 relative overflow-hidden">

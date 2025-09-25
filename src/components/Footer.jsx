@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
   MapPin, 
   Phone, 
@@ -14,14 +15,33 @@ import logoImage from '../assets/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+
+  const scrollToSection = (sectionId) => {
+    navigate('/services');
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
+  const handleQuickLinkClick = (path) => {
+    navigate(path);
+    // Scroll to top when navigating to any page
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
 
   const services = [
-    'Floor Plans',
-    'Virtual Staging',
-    'Photo Editing',
-    '3D Visualization',
-    'Object Removal',
-    'Sky Replacement'
+    { name: 'Real Estate', sectionId: 'real-estate' },
+    { name: 'Object Removal', sectionId: 'object-removal' },
+    { name: '3D Visualization', sectionId: 'virtual-staging' },
+    { name: 'Sky Replacement', sectionId: 'sky-replacement' },
+    { name: 'Color Cast Removal', sectionId: 'color-cast-removal' },
+    { name: 'Floor Plans 3D & 2D', sectionId: 'floor-plans' }
   ];
 
   const quickLinks = [
@@ -80,14 +100,14 @@ const Footer = () => {
             <h4 className="text-xl font-semibold text-white">Our Services</h4>
             <ul className="space-y-3">
               {services.map((service) => (
-                <li key={service}>
-                  <Link
-                    to="/services"
-                    className="text-gray-300 hover:text-[#00d4ff] transition-colors duration-300 flex items-center group"
+                <li key={service.name}>
+                  <button
+                    onClick={() => scrollToSection(service.sectionId)}
+                    className="text-gray-300 hover:text-[#00d4ff] transition-colors duration-300 flex items-center group w-full text-left"
                   >
                     <ArrowRight size={16} className="mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                    {service}
-                  </Link>
+                    {service.name}
+                  </button>
                 </li>
               ))}
             </ul>
@@ -99,13 +119,13 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-gray-300 hover:text-[#00d4ff] transition-colors duration-300 flex items-center group"
+                  <button
+                    onClick={() => handleQuickLinkClick(link.path)}
+                    className="text-gray-300 hover:text-[#00d4ff] transition-colors duration-300 flex items-center group w-full text-left"
                   >
                     <ArrowRight size={16} className="mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                     {link.name}
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>

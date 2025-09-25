@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, Users, Briefcase, Images, MessageSquare, Phone } from 'lucide-react';
 import logoImage from '../assets/logo.png';
@@ -10,6 +10,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Initialize AOS
@@ -26,6 +27,20 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   const navItems = [
     { name: 'Home', path: '/', icon: Home },
     { name: 'About Us', path: '/about', icon: Users },
@@ -37,10 +52,16 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const scrollToSection = (path) => {
-    if (path === '/') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    // Close mobile menu
     setIsOpen(false);
+    
+    // Navigate to the page
+    navigate(path);
+    
+    // Scroll to top after navigation
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
   };
 
   return (
