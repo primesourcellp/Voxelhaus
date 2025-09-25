@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
   CheckCircle, 
@@ -80,28 +81,32 @@ const Home = () => {
       title: "Floor Plans",
       description: "Professional 2D & 3D layouts – clear, accurate, and tailored for property marketing.",
       features: ["2D Floor Plans", "3D Floor Plans", "Floor Plan Redraws"],
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      path: "/floor-plans"
     },
     {
       icon: Palette,
       title: "Virtual Staging",
       description: "Transform empty spaces into beautifully designed rooms that inspire buyers.",
       features: ["Living Room Staging", "Bedroom Staging", "Kitchen Staging"],
-      image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      path: "/virtual-staging"
     },
     {
       icon: Camera,
       title: "Photoshop Works",
       description: "Expert photo editing, retouching, and enhancements to make every property stand out.",
       features: ["Photo Enhancement", "Object Removal", "Sky Replacement"],
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      path: "/object-removal"
     },
     {
       icon: Building,
       title: "Real Estate Marketing",
       description: "Complete visual solutions for real estate professionals – from brochures to digital presentations.",
       features: ["3D Visualization", "Video Editing", "Marketing Materials"],
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      path: "/real-estate"
     }
   ];
 
@@ -603,37 +608,39 @@ const Home = () => {
                       viewport={{ once: true }}
                       className="pt-4"
                     >
-                      <motion.button
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ 
-                          opacity: 1, 
-                          y: 0,
-                          boxShadow: [
-                            '0 0 20px rgba(0, 240, 255, 0.2)',
-                            '0 0 30px rgba(0, 240, 255, 0.4)',
-                            '0 0 20px rgba(0, 240, 255, 0.2)'
-                          ]
-                        }}
-                        transition={{ 
-                          duration: 0.6, 
-                          delay: 1.2,
-                          boxShadow: {
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                          }
-                        }}
-                        viewport={{ once: true }}
-                        whileHover={{ 
-                          scale: 1.08,
-                          boxShadow: '0 0 40px rgba(0, 240, 255, 0.6), 0 0 80px rgba(0, 240, 255, 0.3)',
-                          y: -3
-                        }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 mx-auto lg:mx-0 block border-2 border-transparent hover:border-[#00F0FF]/50"
-                      >
-                        Learn More
-                      </motion.button>
+                      <Link to={service.path} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                        <motion.button
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ 
+                            opacity: 1, 
+                            y: 0,
+                            boxShadow: [
+                              '0 0 20px rgba(0, 240, 255, 0.2)',
+                              '0 0 30px rgba(0, 240, 255, 0.4)',
+                              '0 0 20px rgba(0, 240, 255, 0.2)'
+                            ]
+                          }}
+                          transition={{ 
+                            duration: 0.6, 
+                            delay: 1.2,
+                            boxShadow: {
+                              duration: 3,
+                              repeat: Infinity,
+                              ease: "easeInOut"
+                            }
+                          }}
+                          viewport={{ once: true }}
+                          whileHover={{ 
+                            scale: 1.08,
+                            boxShadow: '0 0 40px rgba(0, 240, 255, 0.6), 0 0 80px rgba(0, 240, 255, 0.3)',
+                            y: -3
+                          }}
+                          whileTap={{ scale: 0.95 }}
+                          className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 mx-auto lg:mx-0 block border-2 border-transparent hover:border-[#00F0FF]/50"
+                        >
+                          Learn More
+                        </motion.button>
+                      </Link>
                     </motion.div>
                   </motion.div>
 
@@ -747,16 +754,18 @@ const Home = () => {
                       viewport={{ once: true }}
                       className="pt-4"
                     >
-                      <motion.button
-                        whileHover={{ 
-                          scale: 1.05,
-                          boxShadow: '0 10px 30px rgba(0, 240, 255, 0.3)'
-                        }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-white px-6 py-3 rounded-xl font-semibold text-lg transition-all duration-300"
-                      >
-                        Learn More
-                      </motion.button>
+                      <Link to="/services" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                        <motion.button
+                          whileHover={{ 
+                            scale: 1.05,
+                            boxShadow: '0 10px 30px rgba(0, 240, 255, 0.3)'
+                          }}
+                          whileTap={{ scale: 0.95 }}
+                          className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-white px-6 py-3 rounded-xl font-semibold text-lg transition-all duration-300"
+                        >
+                          Learn More
+                        </motion.button>
+                      </Link>
                     </motion.div>
                   </motion.div>
 
@@ -868,16 +877,18 @@ const Home = () => {
                 <p className="text-gray-300 text-sm leading-relaxed mb-4">
                   Our team covers all aspects of a project from validation to development to maintenance and support.
                 </p>
-                <motion.button
-                  whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: '0 10px 30px rgba(0, 240, 255, 0.3)'
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-[#00F0FF] text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300"
-                >
-                  Explore Services
-                </motion.button>
+                <Link to="/services" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                  <motion.button
+                    whileHover={{ 
+                      scale: 1.05,
+                      boxShadow: '0 10px 30px rgba(0, 240, 255, 0.3)'
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-[#00F0FF] text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300"
+                  >
+                    Explore Services
+                  </motion.button>
+                </Link>
               </div>
 
               {/* Technology Card */}
