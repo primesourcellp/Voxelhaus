@@ -20,7 +20,7 @@ import {
   ArrowRight,
   Palette
 } from 'lucide-react';
-import aboutHeroImage from '../assets/Image1.jpg';
+import aboutHeroImage from '../assets/img1.png';
 import houseAnimation from '../assets/house-animation.gif';
 import trustImage from '../assets/Image3.jpg';
 import commitmentImage from '../assets/Image4.jpg';
