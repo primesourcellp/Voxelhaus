@@ -1,34 +1,28 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {
   FaPhoneAlt,
   FaEnvelope,
   FaMapMarkerAlt,
-  FaGlobe,
-  FaSmile,
+  FaWhatsapp,
+  FaFacebook,
+  FaInstagram,
   FaClock,
-  FaLock,
-  FaLightbulb,
 } from "react-icons/fa";
-import BgImage from "../assets/3d_image_3.jpg";
+import BgImage from "../assets/img3.png";
 
-const contactInfo = [
-  { icon: FaMapMarkerAlt, title: "Office Address", info: "123 Main Street, City, Country" },
-  { icon: FaPhoneAlt, title: "Phone", info: "+91-XXXXXXXXXX" },
-  { icon: FaEnvelope, title: "Email", info: "info@voxelhaus.com" },
-  { icon: FaGlobe, title: "Website", info: "www.voxelhaus.com" },
-];
-
-const whyReachOut = [
-  { icon: FaSmile, title: "Friendly Support", description: "We’re approachable, easy to talk to, and genuinely interested in your project." },
-  { icon: FaClock, title: "Quick Responses", description: "We respect your time and aim to respond as fast as possible." },
-  { icon: FaLock, title: "Confidential Services", description: "Your project details are safe and secure with us." },
-  { icon: FaLightbulb, title: "Tailored Advice", description: "Every project is unique, and we’ll guide you with solutions that fit your needs." },
+const contactDetails = [
+  { icon: FaEnvelope, title: "Email", info: "xxxxxxxxxx" },
+  { icon: FaPhoneAlt, title: "Phone", info: "(+91) xxxxxxxxxxx" },
+  { icon: FaWhatsapp, title: "WhatsApp", info: "Chat on WhatsApp" },
+  { icon: FaFacebook, title: "Facebook", info: "Facebook" },
+  { icon: FaInstagram, title: "Instagram", info: "Instagram" },
+  { icon: FaMapMarkerAlt, title: "Address", info: "xxxxxxxxxx xxxxxxxxxxxxxxx xxxxxxxxxxxxxxx xxxxxxxxxxx xxxxxxx xxx" },
 ];
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-slate-900 text-white pt-20">
+    <div className="min-h-screen bg-gray-900 text-white pt-20">
       {/* Hero Section */}
       <section 
         className="min-h-screen flex items-center relative overflow-x-hidden w-full"
@@ -84,149 +78,250 @@ const Contact = () => {
         />
 
         {/* Content wrapper */}
-        <div className="relative z-10 max-w-7xl mx-auto px-2 md:px-6 py-12">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-12">
           {/* Header */}
-          <section className="text-center py-12 mb-12">
+          <section className="text-center py-12 mb-16">
             <motion.h1
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-              className="text-5xl md:text-6xl font-bold mb-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-5xl md:text-6xl font-bold mb-4 uppercase tracking-wider"
             >
               <span className="text-white">Contact </span>
               <span className="text-[#00F0FF]">Us</span>
             </motion.h1>
             <motion.p
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl text-gray-300 max-w-3xl mx-auto"
             >
-              Let’s Connect! We’d love to hear from you. Our team provides quick, confidential, and professional support for your real estate projects.
+              Want to Know More? Reach Out to us.
             </motion.p>
           </section>
 
-          {/* Contact Info + Form */}
+          {/* Main Contact Cards */}
           <section className="mb-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Left: Contact Info */}
-              <div className="space-y-6">
-                {contactInfo.map((item, idx) => {
-                  const Icon = item.icon;
-                  return (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              
+              {/* Left Card: Online Inquiry Form */}
                     <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.8, delay: idx * 0.2 }}
-                      className="group flex items-center gap-4 bg-gray-900/70 backdrop-blur-sm border border-gray-700 rounded-xl p-6 cursor-pointer overflow-hidden hover:bg-[#00F0FF]/20 hover:scale-105 transition-all hover:border-[#00F0FF]/50"
-                    >
-                      <motion.div
-                        whileHover={{ rotate: 360, scale: 1.2 }}
-                        transition={{ duration: 0.6 }}
-                        className="w-16 h-16 bg-gray-800 rounded-xl flex items-center justify-center"
-                        
-                      >
-                        <Icon size={28} className="text-white" />
-                      </motion.div>
-                      <div>
-                        <h4 className="font-bold text-white">{item.title}</h4>
-                        <p className="text-gray-300">{item.info}</p>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-
-              {/* Right: Contact Form */}
-              <div className="bg-gray-900/70 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-                <form className="flex flex-col gap-4">
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl h-fit"
+              >
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="text-xl font-bold text-gray-800 mb-8 uppercase tracking-wide"
+                >
+                  Online Inquiry
+                </motion.h2>
+                
+                <form className="space-y-3">
                   <motion.input
                     type="text"
-                    placeholder="Name"
-                    className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-[#00F0FF]"
-                    whileFocus={{ scale: 1.02, boxShadow: "0 0 10px rgba(0,240,255,0.3)" }}
+                    placeholder="Your Name"
+                    className="w-full p-3 rounded-xl bg-gray-100 text-gray-800 border border-gray-200 focus:outline-none focus:border-[#00F0FF] focus:bg-white transition-all duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                    whileFocus={{ scale: 1.02, boxShadow: "0 0 15px rgba(0,240,255,0.2)" }}
                   />
                   <motion.input
                     type="email"
-                    placeholder="Email"
-                    className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-[#00F0FF]"
-                    whileFocus={{ scale: 1.02, boxShadow: "0 0 10px rgba(0,240,255,0.3)" }}
+                    placeholder="Your Email"
+                    className="w-full p-3 rounded-xl bg-gray-100 text-gray-800 border border-gray-200 focus:outline-none focus:border-[#00F0FF] focus:bg-white transition-all duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 1.0 }}
+                    whileFocus={{ scale: 1.02, boxShadow: "0 0 15px rgba(0,240,255,0.2)" }}
                   />
                   <motion.input
-                    type="text"
-                    placeholder="Subject"
-                    className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-[#00F0FF]"
-                    whileFocus={{ scale: 1.02, boxShadow: "0 0 10px rgba(0,240,255,0.3)" }}
+                    type="tel"
+                    placeholder="Your Phone Number"
+                    className="w-full p-3 rounded-xl bg-gray-100 text-gray-800 border border-gray-200 focus:outline-none focus:border-[#00F0FF] focus:bg-white transition-all duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 1.2 }}
+                    whileFocus={{ scale: 1.02, boxShadow: "0 0 15px rgba(0,240,255,0.2)" }}
                   />
                   <motion.textarea
-                    placeholder="Message"
-                    rows="5"
-                    className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-[#00F0FF]"
-                    whileFocus={{ scale: 1.02, boxShadow: "0 0 10px rgba(0,240,255,0.3)" }}
+                    placeholder="Your Message"
+                    rows="4"
+                    className="w-full p-3 rounded-xl bg-gray-100 text-gray-800 border border-gray-200 focus:outline-none focus:border-[#00F0FF] focus:bg-white transition-all duration-300 resize-none"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 1.4 }}
+                    whileFocus={{ scale: 1.02, boxShadow: "0 0 15px rgba(0,240,255,0.2)" }}
                   />
                   <motion.button
                     type="submit"
-                    className="w-full bg-[#00F0FF] hover:bg-[#00d3f0] text-black font-bold py-3 rounded-lg transition-all"
-                    whileHover={{ scale: 1.05, boxShadow: "0 0 15px rgba(0,240,255,0.5)" }}
+                    className="w-full bg-gradient-to-r from-[#00F0FF] to-[#0099FF] hover:from-[#00d3f0] hover:to-[#0088cc] text-white font-bold py-3 rounded-xl transition-all duration-300 shadow-lg"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 1.6 }}
+                    whileHover={{ 
+                      scale: 1.05, 
+                      boxShadow: "0 10px 25px rgba(0,240,255,0.4)",
+                      y: -2
+                    }}
                     whileTap={{ scale: 0.95 }}
                   >
                     Send Message
                   </motion.button>
                 </form>
+              </motion.div>
+
+              {/* Right Card: Contact Details */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-2xl h-fit"
+              >
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  className="text-xl font-bold text-gray-800 mb-6 uppercase tracking-wide"
+                >
+                  Contact Details
+                </motion.h2>
+                
+                <div className="space-y-5">
+                  {contactDetails.map((item, index) => {
+                    const Icon = item.icon;
+                    return (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 1.0 + (index * 0.1) }}
+                        className="flex items-center space-x-3 group cursor-pointer"
+                        whileHover={{ x: 3 }}
+                      >
+                        <div className="w-5 h-5 flex items-center justify-center">
+                          <Icon size={16} className="text-gray-600 group-hover:text-[#00F0FF] transition-colors duration-300" />
+                        </div>
+                        <div>
+                          <p className="text-gray-600 text-sm font-medium group-hover:text-gray-800 transition-colors duration-300">
+                            {item.title}
+                          </p>
+                          <p className="text-gray-800 font-semibold group-hover:text-[#00F0FF] transition-colors duration-300">
+                            {item.info}
+                          </p>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
               </div>
+              </motion.div>
             </div>
           </section>
 
-          {/* Why Reach Out to Us */}
-          <section className="py-12 rounded-3xl mb-12">
+          {/* Embedded Google Map Section */}
+          <section className="mt-16">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center max-w-4xl mx-auto mb-8"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.8 }}
+              className="text-center mb-8"
             >
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Why Reach Out to <span className="text-[#00F0FF]">Us?</span>
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Find Us on the{' '}
+                <span className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] bg-clip-text text-transparent">
+                  Map
+                </span>
               </h2>
-              <p className="text-xl text-gray-300 leading-relaxed">
-                We provide dedicated, professional, and friendly service for all your real estate visualization needs.
+              <p className="text-gray-300 text-lg">
+                Visit our office or get directions to our location
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {whyReachOut.map((item, index) => {
-                const Icon = item.icon;
-                const isEven = index % 2 === 0;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: isEven ? -100 : 100, y: 50 }}
-                    whileInView={{ opacity: 1, x: 0, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.2 }}
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: "0 10px 20px rgba(0,240,255,0.5)",
-                      backgroundColor: "rgba(0,240,255,0.2)"
-                    }}
-                    className="bg-gray-900/70 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 transition-all duration-300 hover:border-[#00F0FF]/50"
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 2.0 }}
+              className="relative w-full max-w-9xl mx-auto h-[400px] rounded-2xl overflow-hidden shadow-2xl"
+            >
+              {/* Embedded Google Map */}
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.558179384777!2d77.38933797477928!3d8.9206006911365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0427a947312531%3A0x37be84092961c8d5!2sPrimesource%20Consulting%20LLP!5e0!3m2!1sen!2sin!4v1758863233823!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-2xl"
+                title="Primesource Consulting LLP Location"
+              ></iframe>
+
+              {/* Map Overlay with Contact Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 2.2 }}
+                className="absolute top-4 right-4"
+              >
+                <motion.a
+                  href="https://maps.app.goo.gl/ZnyE1wm4SY6DSrjo9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: "0 5px 15px rgba(0, 240, 255, 0.3)"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg"
+                >
+                  Contact Us
+                </motion.a>
+              </motion.div>
+
+              {/* Map Info Overlay */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 2.4 }}
+                className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg max-w-sm"
+              >
+                <h3 className="font-bold text-gray-800 text-lg mb-2">Primesource Consulting LLP</h3>
+                <p className="text-gray-600 text-sm mb-3">
+                  10-91-K6, Pavoorchatram - Surandai - Shencottai, Nehru Nagar, Pavoorchatram, Tamil Nadu 627806
+                </p>
+                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <span className="flex items-center">
+                    <span className="text-yellow-500">★★★★★</span>
+                    <span className="ml-1">5.0 (8 reviews)</span>
+                  </span>
+                </div>
+                <div className="mt-3 space-y-2">
+                  <motion.a
+                    href="https://maps.app.goo.gl/ZnyE1wm4SY6DSrjo9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ x: 5 }}
+                    className="flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300"
                   >
-                    <motion.div
-                      whileHover={{ scale: 1.15, rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                      className="w-16 h-16 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-2xl flex items-center justify-center mb-6"
-                    >
-                      <Icon size={32} className="text-white" />
-                    </motion.div>
-                    <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{item.description}</p>
-                  </motion.div>
-                );
-              })}
-            </div>
+                    <FaMapMarkerAlt size={14} className="mr-2" />
+                    <span className="text-sm">Directions</span>
+                  </motion.a>
+                  <motion.a
+                    href="https://maps.app.goo.gl/ZnyE1wm4SY6DSrjo9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ x: 5 }}
+                    className="flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300"
+                  >
+                    <span className="text-sm">View larger map</span>
+                  </motion.a>
+                </div>
+              </motion.div>
+            </motion.div>
           </section>
         </div>
       </section>
