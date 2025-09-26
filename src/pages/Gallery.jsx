@@ -58,10 +58,10 @@ const Gallery = () => {
     {
       id: 5,
       image: image,
-      title: "3D Floor Plan - Residential Layout",
+      title: "2D Floor Plan - Black & White",
       category: "floor-plans",
-      description: "Detailed 3D floor plan showing room layout and spatial relationships.",
-      service: "3D Floor Plan Redraw Services"
+      description: "Detailed 2D floor plan showing room layout and spatial relationships.",
+      service: "2D Floor Plan Redraw Services"
     },
     {
       id: 6,
@@ -74,18 +74,18 @@ const Gallery = () => {
     {
       id: 7,
       image: image3,
-      title: "3D Floor Plan - Residential Layout",
+      title: "2D Floor Plan - Color & Site Plan",
       category: "floor-plans",
-      description: "Detailed 3D floor plan showing room layout and spatial relationships.",
-      service: "3D Floor Plan Redraw Services"
+      description: "Detailed 2D floor plan showing room layout and spatial relationships.",
+      service: "2D Floor Plan Redraw Services"
     },
     {
       id: 8,
       image: image4,
-      title: "3D Floor Plan - Residential Layout",
+      title: "2D Floor Plan - Textured & Site Plan",
       category: "floor-plans",
-      description: "Detailed 3D floor plan showing room layout and spatial relationships.",
-      service: "3D Floor Plan Redraw Services"
+      description: "Detailed 2D floor plan showing room layout and spatial relationships.",
+      service: "2D Floor Plan Redraw Services"
     },
     {
       id: 9,
