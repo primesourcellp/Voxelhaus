@@ -8,7 +8,7 @@ import {
   Facebook, 
   Twitter, 
   Instagram, 
-  Linkedin,
+  MessageCircle,
   ArrowRight
 } from 'lucide-react';
 import logoImage from '../assets/Voxelhaus.png';
@@ -90,7 +90,7 @@ const Footer = () => {
     { name: 'Facebook', icon: Facebook, href: '#' },
     { name: 'Twitter', icon: Twitter, href: '#' },
     { name: 'Instagram', icon: Instagram, href: '#' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#' }
+    { name: 'WhatsApp', icon: MessageCircle, href: 'https://wa.me/917010665966' }
   ];
 
   return (
