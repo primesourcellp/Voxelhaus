@@ -124,31 +124,9 @@ const Services = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/60"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
         
-        {/* Animated Background Elements */}
-        <motion.div 
-          className="absolute top-20 left-20 w-32 h-32 bg-[#00F0FF]/10 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3]
-          }}
-          transition={{ 
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-20 right-20 w-40 h-40 bg-[#0099FF]/10 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1.2, 1, 1.2],
-            opacity: [0.4, 0.7, 0.4]
-          }}
-          transition={{ 
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+        {/* Static Background Elements */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-[#00F0FF]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-[#0099FF]/10 rounded-full blur-3xl"></div>
         
         <div className="container-custom relative z-10 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -157,13 +135,11 @@ const Services = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ 
                 opacity: 1, 
-                x: 0,
-                y: [0, -5, 0]
+                x: 0
               }}
               transition={{ 
                 opacity: { duration: 0.8 },
-                x: { duration: 0.8 },
-                y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+                x: { duration: 0.8 }
               }}
               className="space-y-8 px-4 lg:px-8"
             >
@@ -257,17 +233,11 @@ const Services = () => {
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ 
                     opacity: 1, 
-                    x: 0,
-                    boxShadow: [
-                      '0 0 20px rgba(0, 240, 255, 0.3)',
-                      '0 0 30px rgba(0, 240, 255, 0.5)',
-                      '0 0 20px rgba(0, 240, 255, 0.3)'
-                    ]
+                    x: 0
                   }}
                   transition={{ 
                     opacity: { duration: 0.6, delay: 1.4 },
-                    x: { duration: 0.6, delay: 1.4 },
-                    boxShadow: { duration: 2, repeat: Infinity }
+                    x: { duration: 0.6, delay: 1.4 }
                   }}
                   whileHover={{ 
                     scale: 1.05,

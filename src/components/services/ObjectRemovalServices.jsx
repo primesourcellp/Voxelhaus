@@ -28,31 +28,9 @@ const ObjectRemovalServices = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/60"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
         
-        {/* Animated Background Elements */}
-        <motion.div 
-          className="absolute top-20 left-20 w-32 h-32 bg-[#00F0FF]/10 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3]
-          }}
-          transition={{ 
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-20 right-20 w-40 h-40 bg-[#0099FF]/10 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1.2, 1, 1.2],
-            opacity: [0.4, 0.7, 0.4]
-          }}
-          transition={{ 
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+        {/* Static Background Elements */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-[#00F0FF]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-[#0099FF]/10 rounded-full blur-3xl"></div>
         
         <div className="container-custom relative z-10 py-20">
           <div className="max-w-4xl">
@@ -206,11 +184,21 @@ const ObjectRemovalServices = () => {
                   title: "Background Clean-Up",
                   description: "Ensure every corner of the property image looks neat, polished, and free from visual distractions."
                 }
-              ].map((service, index) => (
+              ].map((service, index) => {
+                const directions = [
+                  { x: -50, y: 0 }, // Left
+                  { x: 50, y: 0 },  // Right
+                  { x: 0, y: -30 }, // Top
+                  { x: 0, y: 30 },  // Down
+                  { x: -30, y: -30 } // Top-left
+                ];
+                const direction = directions[index % directions.length];
+                
+                return (
                 <motion.div
                   key={service.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: direction.x, y: direction.y }}
+                  whileInView={{ opacity: 1, x: 0, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden hover:border-[#00F0FF]/50 transition-all duration-300 group"
@@ -230,7 +218,8 @@ const ObjectRemovalServices = () => {
                     <p className="text-gray-300 leading-relaxed">{service.description}</p>
                   </div>
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
           </motion.div>
 

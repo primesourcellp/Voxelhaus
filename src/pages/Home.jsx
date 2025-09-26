@@ -171,31 +171,9 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/60"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
         
-        {/* Animated Background Elements */}
-        <motion.div 
-          className="absolute top-20 left-20 w-32 h-32 bg-[#00F0FF]/10 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3]
-          }}
-          transition={{ 
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-20 right-20 w-40 h-40 bg-[#0099FF]/10 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1.2, 1, 1.2],
-            opacity: [0.4, 0.7, 0.4]
-          }}
-          transition={{ 
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+        {/* Static Background Elements */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-[#00F0FF]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-[#0099FF]/10 rounded-full blur-3xl"></div>
         
         <div className="container-custom relative z-10 overflow-hidden py-35">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -259,21 +237,11 @@ const Home = () => {
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ 
                     opacity: 1, 
-                    x: 0,
-                    boxShadow: [
-                      '0 0 20px rgba(0, 240, 255, 0.3)',
-                      '0 0 30px rgba(0, 240, 255, 0.5)',
-                      '0 0 20px rgba(0, 240, 255, 0.3)'
-                    ]
+                    x: 0
                   }}
                   transition={{ 
                     duration: 0.8, 
-                    delay: 1.2,
-                    boxShadow: {
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }
+                    delay: 1.2
                   }}
                   whileHover={{ 
                     scale: 1.08,
@@ -340,18 +308,6 @@ const Home = () => {
                     <motion.div 
                       className="text-3xl font-bold text-[#00F0FF]"
                       style={{ textShadow: '0 0 20px rgba(0, 240, 255, 0.5)' }}
-                      animate={{
-                        textShadow: [
-                          '0 0 20px rgba(0, 240, 255, 0.5)',
-                          '0 0 30px rgba(0, 240, 255, 0.8)',
-                          '0 0 20px rgba(0, 240, 255, 0.5)'
-                        ]
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
                     >
                       {stat.number}
                     </motion.div>
@@ -458,18 +414,7 @@ const Home = () => {
                   >
                     <motion.div 
                       className={`text-3xl font-bold ${stat.color} mb-2`}
-                      animate={{
-                        textShadow: [
-                          '0 0 20px rgba(0, 240, 255, 0.5)',
-                          '0 0 30px rgba(0, 240, 255, 0.8)',
-                          '0 0 20px rgba(0, 240, 255, 0.5)'
-                        ]
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
+                      style={{ textShadow: '0 0 20px rgba(0, 240, 255, 0.5)' }}
                     >
                       {stat.number}
                     </motion.div>

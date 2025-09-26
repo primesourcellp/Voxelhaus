@@ -522,9 +522,9 @@ const About = () => {
               viewport={{ once: true }}
               className="inline-flex items-center space-x-3 mb-8"
             >
-              <div className="w-2 h-2 bg-[#00F0FF] rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-[#00F0FF] rounded-full"></div>
               <span className="text-[#00F0FF] font-semibold text-lg tracking-wider uppercase">Trusted Partnership</span>
-              <div className="w-2 h-2 bg-[#00F0FF] rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-[#00F0FF] rounded-full"></div>
             </motion.div>
             
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">

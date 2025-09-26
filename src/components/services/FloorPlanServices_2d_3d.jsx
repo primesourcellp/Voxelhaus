@@ -32,31 +32,9 @@ const FloorPlanServices = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/60"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
         
-        {/* Animated Background Elements */}
-        <motion.div 
-          className="absolute top-20 left-20 w-32 h-32 bg-[#00F0FF]/10 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3]
-          }}
-          transition={{ 
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-20 right-20 w-40 h-40 bg-[#0099FF]/10 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1.2, 1, 1.2],
-            opacity: [0.4, 0.7, 0.4]
-          }}
-          transition={{ 
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+        {/* Static Background Elements */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-[#00F0FF]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-[#0099FF]/10 rounded-full blur-3xl"></div>
         
         <div className="container-custom relative z-10 py-20">
           <div className="max-w-4xl">
@@ -64,13 +42,11 @@ const FloorPlanServices = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ 
                 opacity: 1, 
-                x: 0,
-                y: [0, -5, 0]
+                x: 0
               }}
               transition={{ 
                 opacity: { duration: 0.8 },
-                x: { duration: 0.8 },
-                y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+                x: { duration: 0.8 }
               }}
               className="space-y-8 px-4 lg:px-8"
             >
@@ -96,10 +72,6 @@ const FloorPlanServices = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 0.6 }}
-                      whileHover={{ 
-                        scale: 1.05,
-                        textShadow: '0 0 40px rgba(0, 240, 255, 0.8)'
-                      }}
                     >
                       Redraw Services
                     </motion.span>
@@ -112,10 +84,6 @@ const FloorPlanServices = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.8 }}
                     className="text-xl text-gray-300 leading-relaxed"
-                    whileHover={{ 
-                      scale: 1.02,
-                      color: '#ffffff'
-                    }}
                   >
                     Precise and Professional Floor Plan Redraws for Clear Property Layouts
                   </motion.p>
@@ -362,8 +330,6 @@ const FloorPlanServices = () => {
                 A 2D floor plan redraw is more than a simple sketch—it's the foundation of clear communication, successful sales, and well-executed projects. At Voxelhaus consultancy, we specialize in crafting accurate and visually appealing redraws that simplify complex ideas and give your projects the professional touch they deserve.
               </p>
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-bold px-8 py-4 rounded-xl hover:shadow-lg hover:shadow-[#00F0FF]/25 transition-all duration-300"
               >
                 Get Your 2D Floor Plan Redraw
@@ -391,9 +357,9 @@ const FloorPlanServices = () => {
               viewport={{ once: true }}
               className="inline-flex items-center space-x-3 mb-8"
             >
-              <div className="w-2 h-2 bg-[#00F0FF] rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-[#00F0FF] rounded-full"></div>
               <span className="text-[#00F0FF] font-semibold text-lg tracking-wider uppercase">3D Floor Plan Redraw</span>
-              <div className="w-2 h-2 bg-[#00F0FF] rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-[#00F0FF] rounded-full"></div>
             </motion.div>
             
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">
@@ -647,8 +613,6 @@ const FloorPlanServices = () => {
                 A 3D floor plan redraw is more than just a visual upgrade—it's a strategic tool to enhance property marketing, streamline communication, and build client confidence. At Voxelhaus consultancy, we transform your designs into clear, engaging, and impactful 3D visuals that help sell ideas and properties faster.
               </p>
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-bold px-8 py-4 rounded-xl hover:shadow-lg hover:shadow-[#00F0FF]/25 transition-all duration-300"
               >
                 Get Your 3D Floor Plan Redraw
