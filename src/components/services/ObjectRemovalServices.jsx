@@ -9,6 +9,7 @@ import natural from '../../assets/natural.jpeg';
 import onlinePerformance from '../../assets/online_performance.jpeg';
 import objectTrueValue from '../../assets/object.jpeg';
 import professional from '../../assets/professional.jpeg';
+import about1 from '../../assets/color3.jpg';
 import img3 from '../../assets/img3.png';
 const ObjectRemovalServices = () => {
   return (
@@ -270,7 +271,7 @@ const ObjectRemovalServices = () => {
                   description: "Our editing team ensures that every image looks natural, seamless, and industry-standard, giving you confidence in your listings."
                 },
                 {
-                  image: furnitureRemoval,
+                  image: about1,
                   title: "Confidential & Reliable Services",
                   description: "We handle your project files with complete confidentiality, delivering results on time while respecting your privacy."
                 }
