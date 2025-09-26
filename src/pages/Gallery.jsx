@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { X, Eye, Filter, Grid, List, Sparkles, Zap } from 'lucide-react';
 
 // Import all images
@@ -625,13 +626,18 @@ const Gallery = () => {
               Let us transform your property listings with our professional visualization services. 
               From 3D renderings to photo enhancements, we help you sell properties faster.
             </p>
-            <motion.button
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-semibold rounded-xl hover:shadow-[0px_0px_30px_5px_rgba(0,240,255,0.3)] transition-all duration-300"
             >
-              Get Started Today
-            </motion.button>
+              <Link 
+                to="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-semibold rounded-xl hover:shadow-[0px_0px_30px_5px_rgba(0,240,255,0.3)] transition-all duration-300"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                Get Started Today
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>

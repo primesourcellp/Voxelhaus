@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Star, Users } from 'lucide-react';
 import image3d4 from '../../assets/img3.png';
 
@@ -581,7 +582,7 @@ const RealEstateServices = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 viewport={{ once: true }}
               >
-                <motion.button
+                <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
@@ -593,16 +594,21 @@ const RealEstateServices = () => {
                     transition: { duration: 0.3 }
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-bold px-8 py-4 rounded-2xl flex items-center justify-center space-x-3 group"
                 >
-                  <span>Get Started Today</span>
-                  <motion.div
-                    whileHover={{ x: 3 }}
-                    transition={{ duration: 0.2 }}
+                  <Link 
+                    to="/contact"
+                    className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-bold px-8 py-4 rounded-2xl flex items-center justify-center space-x-3 group"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   >
-                    <ArrowRight size={20} />
-                  </motion.div>
-                </motion.button>
+                    <span>Get Started Today</span>
+                    <motion.div
+                      whileHover={{ x: 3 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <ArrowRight size={20} />
+                    </motion.div>
+                  </Link>
+                </motion.div>
                 
               </motion.div>
             </motion.div>

@@ -1,7 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, Star, Award, Users, DollarSign, Home, Layout, Eye } from 'lucide-react';
-import image3d1 from '../../assets/floor2.png';
+import image3d1 from '../../assets/3d_image_1.jpg';
+import image3d2 from '../../assets/3d-image_2.jpg';
+import image3d3 from '../../assets/3d_image_3.jpg';
+import image3d4 from '../../assets/3d_image_4.jpg';
+import image1 from '../../assets/Image.jpg';
+import image2 from '../../assets/Image1.jpg';
+import image3 from '../../assets/Image3.jpg';
+import image4 from '../../assets/Image4.jpg';
+import img1 from '../../assets/img1.png';
+import img2 from '../../assets/img2.png';
+import img3 from '../../assets/img3.png';
+import img4 from '../../assets/img4.png';
+import img5 from '../../assets/img5.png';
+import floor2 from '../../assets/floor2.png';
 
 const FloorPlanServices = () => {
   return (
@@ -10,7 +22,7 @@ const FloorPlanServices = () => {
       <section 
         className="min-h-screen flex items-center relative overflow-x-hidden w-full"
         style={{
-          backgroundImage: `url(${image3d1})`,
+          backgroundImage: `url(${floor2})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
@@ -166,54 +178,58 @@ const FloorPlanServices = () => {
             >
               {[
                 {
-                  icon: Eye,
+                  image: image3d1,
                   title: "Clear Property Understanding",
                   description: "2D floor plan redraws provide a simple overview of the property's layout. Buyers and clients can instantly grasp the structure of the home or building, including room dimensions, wall placements, and entry points."
                 },
                 {
-                  icon: Star,
+                  image: image3d2,
                   title: "Effective Sales & Marketing Tool",
                   description: "Real estate listings with 2D redraws receive more engagement because they provide transparency. Buyers feel more confident when they can see the actual layout of a property before visiting."
                 },
                 {
-                  icon: CheckCircle,
+                  image: image3d3,
                   title: "Supports Accurate Planning",
                   description: "Whether for construction or renovation, a 2D floor plan redraw serves as a reliable reference for builders, engineers, and contractors. It minimizes errors and supports material estimation."
                 },
                 {
-                  icon: Users,
+                  image: image3d4,
                   title: "Enhances Client Communication",
                   description: "Clients often struggle with technical blueprints. A professionally redrawn 2D plan bridges this gap, making it easier to present design ideas and get approvals quickly."
                 },
                 {
-                  icon: DollarSign,
+                  image: image1,
                   title: "Affordable & Time-Saving",
                   description: "Compared to 3D floor plans or virtual walkthroughs, 2D floor plan redraws are cost-effective yet powerful for both marketing and design. They are quicker to produce, making them ideal for tight timelines."
                 },
                 {
-                  icon: Award,
+                  image: image2,
                   title: "Professional Presentation",
                   description: "Clean, accurate 2D redraws enhance your professional image and help build trust with clients and buyers through clear, understandable visual communication."
                 }
-              ].map((benefit, index) => {
-                const Icon = benefit.icon;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-[#00F0FF]/50 transition-all duration-300 group"
-                  >
-                    <div className="w-12 h-12 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <Icon size={24} className="text-white" />
-                    </div>
+              ].map((benefit, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-900/30 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 hover:border-[#00F0FF]/50 transition-all duration-300 group"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={benefit.image} 
+                      alt={benefit.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  </div>
+                  <div className="p-6">
                     <h4 className="text-xl font-bold text-white mb-3">{benefit.title}</h4>
                     <p className="text-gray-300 leading-relaxed">{benefit.description}</p>
-                  </motion.div>
-                );
-              })}
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
 
             {/* Our 2D Floor Plan Redraw Services */}
@@ -228,18 +244,22 @@ const FloorPlanServices = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
                   {
+                    image: image3,
                     title: "From Sketches",
                     description: "We can take your rough sketches or hand-drawn layouts and transform them into polished, professional 2D floor plan redraws with accurate measurements and clear labeling. Perfect for presentations, sales, or approvals."
                   },
                   {
+                    image: image4,
                     title: "From Blueprints",
                     description: "Already have technical CAD drawings or old blueprints? We can redraw them into clean, easy-to-read 2D layouts that are ideal for marketing, client presentations, or renovation projects."
                   },
                   {
+                    image: img1,
                     title: "Colored & Furnished Redraws",
                     description: "For real estate marketing, we create furnished 2D redraws with added furniture, décor, and color coding to highlight different spaces. These layouts help buyers visualize the property more realistically."
                   },
                   {
+                    image: img2,
                     title: "High-Resolution Outputs",
                     description: "All our redraws are delivered in high-resolution formats, suitable for websites, brochures, and print materials. Crisp and professional visuals for both digital and offline marketing."
                   }
@@ -250,10 +270,22 @@ const FloorPlanServices = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="bg-gray-800/50 rounded-xl p-6 border border-gray-600 hover:border-[#00F0FF]/50 transition-all duration-300"
+                    className="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-600 hover:border-[#00F0FF]/50 transition-all duration-300 group"
                   >
-                    <h4 className="text-xl font-bold text-[#00F0FF] mb-3">{service.title}</h4>
-                    <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                    <div className="relative h-64 overflow-hidden">
+                      <img 
+                        src={service.image} 
+                        alt={service.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <h4 className="text-xl font-bold text-white mb-2">{service.title}</h4>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                    </div>
                   </motion.div>
                 ))}
               </div>
@@ -270,14 +302,38 @@ const FloorPlanServices = () => {
               <h3 className="text-3xl font-bold text-white mb-6">Why Choose Voxelhaus Consultancy?</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
-                  "Experienced Designers with architectural visualization expertise",
-                  "Tailored Solutions for real estate agents, developers, and architects",
-                  "Affordable Pricing without compromising quality",
-                  "Fast Turnaround to meet your deadlines",
-                  "Confidential & Secure Services with 100% data safety",
-                  "High-Resolution Outputs for all marketing needs",
-                  "Professional Presentation standards",
-                  "Client-focused approach with clear communication"
+                  {
+                    title: "Experienced Designers",
+                    description: "Experienced Designers with architectural visualization expertise"
+                  },
+                  {
+                    title: "Tailored Solutions",
+                    description: "Tailored Solutions for real estate agents, developers, and architects"
+                  },
+                  {
+                    title: "Affordable Pricing",
+                    description: "Affordable Pricing without compromising quality"
+                  },
+                  {
+                    title: "Fast Turnaround",
+                    description: "Fast Turnaround to meet your deadlines"
+                  },
+                  {
+                    title: "Secure Services",
+                    description: "Confidential & Secure Services with 100% data safety"
+                  },
+                  {
+                    title: "High-Resolution Outputs",
+                    description: "High-Resolution Outputs for all marketing needs"
+                  },
+                  {
+                    title: "Professional Standards",
+                    description: "Professional Presentation standards"
+                  },
+                  {
+                    title: "Client-Focused",
+                    description: "Client-focused approach with clear communication"
+                  }
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -285,10 +341,10 @@ const FloorPlanServices = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-center space-x-3 text-left"
+                    className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-[#00F0FF]/50 transition-all duration-300 hover:bg-gray-800/70"
                   >
-                    <CheckCircle size={20} className="text-[#00F0FF] flex-shrink-0" />
-                    <span className="text-gray-300">{item}</span>
+                    <h4 className="text-lg font-bold text-white mb-3">{item.title}</h4>
+                    <p className="text-gray-300 leading-relaxed">{item.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -397,54 +453,58 @@ const FloorPlanServices = () => {
             >
               {[
                 {
-                  icon: Eye,
+                  image: img3,
                   title: "Better Property Visualization",
                   description: "3D floor plans allow clients to see how spaces connect and flow, unlike flat 2D layouts. Buyers can instantly picture where furniture, lighting, and décor fit into each area."
                 },
                 {
-                  icon: Star,
+                  image: img4,
                   title: "Increased Engagement and Sales",
                   description: "High-quality 3D visuals attract more attention online and in marketing campaigns. Potential buyers are more likely to engage with listings that feature 3D floor plans."
                 },
                 {
-                  icon: Award,
+                  image: img5,
                   title: "Professional and Modern Appeal",
                   description: "Presenting properties with 3D floor plans shows your commitment to quality and professionalism. It gives your brand a modern edge, helping you stand out from competitors."
                 },
                 {
-                  icon: CheckCircle,
+                  image: image3d1,
                   title: "Error Detection and Space Planning",
                   description: "3D redraws make it easier to identify design flaws or space constraints early in the process. This ensures better planning, accurate layouts, and improved efficiency."
                 },
                 {
-                  icon: Users,
+                  image: image3d2,
                   title: "Client Confidence and Satisfaction",
                   description: "When clients can clearly visualize a project, it builds trust. A 3D floor plan redraw provides transparency and clarity, helping clients feel more confident in their decisions."
                 },
                 {
-                  icon: Home,
+                  image: image3d3,
                   title: "Realistic Property Representation",
                   description: "3D floor plans provide a more accurate representation of how the space will look and feel, helping buyers make informed decisions about their potential new home."
                 }
-              ].map((benefit, index) => {
-                const Icon = benefit.icon;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-[#00F0FF]/50 transition-all duration-300 group"
-                  >
-                    <div className="w-12 h-12 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <Icon size={24} className="text-white" />
-                    </div>
+              ].map((benefit, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-800/30 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 hover:border-[#00F0FF]/50 transition-all duration-300 group"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={benefit.image} 
+                      alt={benefit.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  </div>
+                  <div className="p-6">
                     <h4 className="text-xl font-bold text-white mb-3">{benefit.title}</h4>
                     <p className="text-gray-300 leading-relaxed">{benefit.description}</p>
-                  </motion.div>
-                );
-              })}
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
 
             {/* Our 3D Floor Plan Redraw Services */}
@@ -459,26 +519,32 @@ const FloorPlanServices = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
                   {
+                    image: image3d4,
                     title: "Conversion from 2D to 3D Floor Plans",
                     description: "We take your traditional 2D sketches or CAD drawings and convert them into stunning 3D floor plans with realistic textures, lighting, and finishes."
                   },
                   {
+                    image: image1,
                     title: "Fully Furnished 3D Floor Plans",
                     description: "Our team can add detailed furniture, décor, and appliances to your floor plan, helping clients see the space as it would look when occupied."
                   },
                   {
+                    image: image2,
                     title: "Custom Style Options",
                     description: "From modern minimalism to luxurious interiors, we can customize the style of your 3D floor plan redraw to align with your brand or project requirements."
                   },
                   {
+                    image: image3,
                     title: "High-Resolution Outputs",
                     description: "We deliver sharp, high-resolution 3D floor plans suitable for websites, brochures, and presentations. These professional visuals make your marketing materials stand out."
                   },
                   {
+                    image: image4,
                     title: "Quick Turnaround and Affordable Pricing",
                     description: "We value both speed and quality. Our experienced team ensures quick delivery without compromising on accuracy or detail. With affordable pricing, our services are accessible for businesses of all sizes."
                   },
                   {
+                    image: img1,
                     title: "Interactive 3D Models",
                     description: "Create interactive 3D floor plans that allow clients to explore the space from different angles, providing an immersive experience that enhances understanding and engagement."
                   }
@@ -489,10 +555,22 @@ const FloorPlanServices = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="bg-gray-700/50 rounded-xl p-6 border border-gray-600 hover:border-[#00F0FF]/50 transition-all duration-300"
+                    className="bg-gray-700/50 rounded-xl overflow-hidden border border-gray-600 hover:border-[#00F0FF]/50 transition-all duration-300 group"
                   >
-                    <h4 className="text-xl font-bold text-[#00F0FF] mb-3">{service.title}</h4>
-                    <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                    <div className="relative h-64 overflow-hidden">
+                      <img 
+                        src={service.image} 
+                        alt={service.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <h4 className="text-xl font-bold text-white mb-2">{service.title}</h4>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                    </div>
                   </motion.div>
                 ))}
               </div>
@@ -509,14 +587,38 @@ const FloorPlanServices = () => {
               <h3 className="text-3xl font-bold text-white mb-6">Why Choose Voxelhaus Consultancy?</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
-                  "Expert Team: Skilled designers with years of experience in architectural visualization",
-                  "Affordable Solutions: Cost-effective solutions tailored to fit your budget",
-                  "Fast Delivery: Quick turnaround without sacrificing quality",
-                  "Confidential & Secure: Your data and designs remain 100% safe with us",
-                  "Global Reach: Serving real estate, architecture, and design professionals worldwide",
-                  "Custom Style Options: Tailored to match your brand and project requirements",
-                  "High-Resolution Outputs: Professional visuals for all marketing needs",
-                  "Interactive Models: Engaging 3D experiences that captivate clients"
+                  {
+                    title: "Expert Team",
+                    description: "Expert Team: Skilled designers with years of experience in architectural visualization"
+                  },
+                  {
+                    title: "Affordable Solutions",
+                    description: "Affordable Solutions: Cost-effective solutions tailored to fit your budget"
+                  },
+                  {
+                    title: "Fast Delivery",
+                    description: "Fast Delivery: Quick turnaround without sacrificing quality"
+                  },
+                  {
+                    title: "Secure Services",
+                    description: "Confidential & Secure: Your data and designs remain 100% safe with us"
+                  },
+                  {
+                    title: "Global Reach",
+                    description: "Global Reach: Serving real estate, architecture, and design professionals worldwide"
+                  },
+                  {
+                    title: "Custom Style Options",
+                    description: "Custom Style Options: Tailored to match your brand and project requirements"
+                  },
+                  {
+                    title: "High-Resolution Outputs",
+                    description: "High-Resolution Outputs: Professional visuals for all marketing needs"
+                  },
+                  {
+                    title: "Interactive Models",
+                    description: "Interactive Models: Engaging 3D experiences that captivate clients"
+                  }
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -524,10 +626,10 @@ const FloorPlanServices = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-center space-x-3 text-left"
+                    className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-[#00F0FF]/50 transition-all duration-300 hover:bg-gray-800/70"
                   >
-                    <CheckCircle size={20} className="text-[#00F0FF] flex-shrink-0" />
-                    <span className="text-gray-300">{item}</span>
+                    <h4 className="text-lg font-bold text-white mb-3">{item.title}</h4>
+                    <p className="text-gray-300 leading-relaxed">{item.description}</p>
                   </motion.div>
                 ))}
               </div>

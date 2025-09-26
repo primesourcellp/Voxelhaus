@@ -1,7 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, Star, Award, Layout, Clock, Users } from 'lucide-react';
-import image3d3 from '../../assets/img4.png';
+import image3d1 from '../../assets/3d_image_1.jpg';
+import image3d2 from '../../assets/3d-image_2.jpg';
+import image3d3 from '../../assets/3d_image_3.jpg';
+import image3d4 from '../../assets/3d_image_4.jpg';
+import image1 from '../../assets/Image.jpg';
+import image2 from '../../assets/Image1.jpg';
+import image3 from '../../assets/Image3.jpg';
+import image4 from '../../assets/Image4.jpg';
+import img1 from '../../assets/img1.png';
+import img2 from '../../assets/img2.png';
+import img3 from '../../assets/img3.png';
+import img4 from '../../assets/img4.png';
+import img5 from '../../assets/img5.png';
 
 const SkyReplacementServices = () => {
   return (
@@ -10,7 +21,7 @@ const SkyReplacementServices = () => {
       <section 
         className="min-h-screen flex items-center relative overflow-x-hidden w-full"
         style={{
-          backgroundImage: `url(${image3d3})`,
+          backgroundImage: `url(${img5})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
@@ -171,49 +182,53 @@ const SkyReplacementServices = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: Star,
+                  image: image3d1,
                   title: "Instant Visual Appeal",
                   description: "An enhanced sky adds vibrancy and depth to the image, making the property more eye-catching in crowded real estate listings. This immediate impact increases clicks, inquiries, and buyer engagement."
                 },
                 {
-                  icon: Award,
+                  image: image3d2,
                   title: "Highlighting Property Features",
                   description: "A perfectly blended sky not only adds appeal but also highlights the architectural details and landscaping of a property. The right backdrop draws attention to the property's unique features instead of letting dull skies distract the viewer."
                 },
                 {
-                  icon: Users,
+                  image: image3d3,
                   title: "Boosting Buyer Confidence",
                   description: "High-quality images with natural skies create a sense of trust. Buyers feel they are looking at professional and reliable listings, which makes them more likely to take the next step in the buying journey."
                 },
                 {
-                  icon: Layout,
+                  image: image3d4,
                   title: "Versatility for Marketing Use",
                   description: "Enhanced skies make your property photos perfect for websites, brochures, flyers, and social media. A polished look across all platforms builds your brand's professional identity."
                 },
                 {
-                  icon: Clock,
+                  image: image1,
                   title: "Fast Turnaround and Affordable Pricing",
                   description: "At Voxelhaus consultancy, we understand real estate agents and developers often work with tight deadlines. That's why we deliver flawless results quickly, ensuring your listings are ready to go live without delays—all at cost-effective rates."
                 }
-              ].map((benefit, index) => {
-                const Icon = benefit.icon;
-                return (
-                  <motion.div
-                    key={benefit.title}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-[#00F0FF]/50 transition-all duration-300 text-center"
-                  >
-                    <div className="w-16 h-16 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <Icon size={24} className="text-white" />
-                    </div>
+              ].map((benefit, index) => (
+                <motion.div
+                  key={benefit.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden hover:border-[#00F0FF]/50 transition-all duration-300 group"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={benefit.image} 
+                      alt={benefit.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  </div>
+                  <div className="p-6">
                     <h4 className="text-xl font-bold text-white mb-4">{benefit.title}</h4>
                     <p className="text-gray-300 leading-relaxed">{benefit.description}</p>
-                  </motion.div>
-                );
-              })}
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
@@ -231,22 +246,27 @@ const SkyReplacementServices = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
+                  image: image2,
                   title: "Blue Sky Replacement",
                   description: "We replace overcast or washed-out skies with clear, bright blue skies, instantly lifting the mood of your property photos."
                 },
                 {
+                  image: image3,
                   title: "Sunset and Twilight Skies",
                   description: "For luxury homes or evening listings, we offer dramatic sunset and twilight sky replacements. These add a warm, inviting atmosphere and highlight exterior lighting beautifully."
                 },
                 {
+                  image: image4,
                   title: "Custom Sky Matching",
                   description: "Every property has its own style and character. We select skies that best match the property's mood, location, and season, ensuring natural and realistic results."
                 },
                 {
+                  image: img1,
                   title: "Advanced Blending Techniques",
                   description: "Our expert editors adjust shadows, reflections, and tones to make sure the new sky blends seamlessly with the property and surroundings."
                 },
                 {
+                  image: img2,
                   title: "Consistency Across Portfolios",
                   description: "For real estate agencies and developers managing multiple listings, Voxelhaus consultancy ensures all edited photos maintain a consistent, high-quality look."
                 }
@@ -257,10 +277,22 @@ const SkyReplacementServices = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-[#00F0FF]/50 transition-all duration-300"
+                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden hover:border-[#00F0FF]/50 transition-all duration-300 group"
                 >
-                  <h4 className="text-xl font-bold text-white mb-4">{service.title}</h4>
-                  <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                  <div className="relative h-64 overflow-hidden">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h4 className="text-xl font-bold text-white mb-2">{service.title}</h4>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -279,11 +311,26 @@ const SkyReplacementServices = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                "Trusted by real estate agents, photographers, and developers worldwide.",
-                "Experienced editing team specializing in real estate visuals.",
-                "Confidential and secure handling of all your property files.",
-                "Customized solutions for single listings or bulk editing.",
-                "Quick delivery with premium quality."
+                {
+                  title: "Trusted Worldwide",
+                  description: "Trusted by real estate agents, photographers, and developers worldwide."
+                },
+                {
+                  title: "Expert Team",
+                  description: "Experienced editing team specializing in real estate visuals."
+                },
+                {
+                  title: "Secure & Confidential",
+                  description: "Confidential and secure handling of all your property files."
+                },
+                {
+                  title: "Custom Solutions",
+                  description: "Customized solutions for single listings or bulk editing."
+                },
+                {
+                  title: "Fast Delivery",
+                  description: "Quick delivery with premium quality."
+                }
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -291,12 +338,10 @@ const SkyReplacementServices = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-[#00F0FF]/50 transition-all duration-300"
+                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-[#00F0FF]/50 transition-all duration-300 hover:bg-gray-800/70"
                 >
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle size={20} className="text-[#00F0FF] flex-shrink-0 mt-1" />
-                    <p className="text-gray-300 leading-relaxed">{item}</p>
-                  </div>
+                  <h4 className="text-lg font-bold text-white mb-3">{item.title}</h4>
+                  <p className="text-gray-300 leading-relaxed">{item.description}</p>
                 </motion.div>
               ))}
             </div>

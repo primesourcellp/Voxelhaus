@@ -1,7 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, Award, Home, Star, Users } from 'lucide-react';
-import image3d1 from '../../assets/img2.png';
+import image3d1 from '../../assets/3d_image_1.jpg';
+import image3d2 from '../../assets/3d-image_2.jpg';
+import image3d3 from '../../assets/3d_image_3.jpg';
+import image3d4 from '../../assets/3d_image_4.jpg';
+import image1 from '../../assets/Image.jpg';
+import image2 from '../../assets/Image1.jpg';
+import image3 from '../../assets/Image3.jpg';
+import image4 from '../../assets/Image4.jpg';
+import img1 from '../../assets/img1.png';
+import img2 from '../../assets/img2.png';
+import img3 from '../../assets/img3.png';
+import img4 from '../../assets/img4.png';
+import img5 from '../../assets/img5.png';
 
 const ObjectRemovalServices = () => {
   return (
@@ -10,7 +21,7 @@ const ObjectRemovalServices = () => {
       <section 
         className="min-h-screen flex items-center relative overflow-x-hidden w-full"
         style={{
-          backgroundImage: `url(${image3d1})`,
+          backgroundImage: `url(${img3})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
@@ -174,22 +185,27 @@ const ObjectRemovalServices = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
+                  image: image3d1,
                   title: "Clutter & Furniture Removal",
                   description: "Take away unwanted furniture, boxes, or clutter from rooms to highlight clean, spacious interiors."
                 },
                 {
+                  image: image3d2,
                   title: "Wire, Cable & Fixture Removal",
                   description: "Eliminate distracting wires, outlets, or unnecessary fixtures that reduce the elegance of property images."
                 },
                 {
+                  image: image3d3,
                   title: "Personal Item Removal",
                   description: "Erase personal belongings such as photos, toys, or clothes to create neutral, buyer-friendly spaces."
                 },
                 {
+                  image: image3d4,
                   title: "Outdoor Object Removal",
                   description: "Remove vehicles, bins, signage, or other distractions from exterior shots to improve curb appeal."
                 },
                 {
+                  image: image1,
                   title: "Background Clean-Up",
                   description: "Ensure every corner of the property image looks neat, polished, and free from visual distractions."
                 }
@@ -200,10 +216,22 @@ const ObjectRemovalServices = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-[#00F0FF]/50 transition-all duration-300"
+                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden hover:border-[#00F0FF]/50 transition-all duration-300 group"
                 >
-                  <h4 className="text-xl font-bold text-white mb-4">{service.title}</h4>
-                  <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                  <div className="relative h-64 overflow-hidden">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h4 className="text-xl font-bold text-white mb-2">{service.title}</h4>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -226,49 +254,53 @@ const ObjectRemovalServices = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: Award,
+                  image: image2,
                   title: "Highlight the Property's True Value",
                   description: "By removing distractions, we ensure buyers focus on the property's architecture, design, and potential rather than what's in the background."
                 },
                 {
-                  icon: Home,
+                  image: image3,
                   title: "Create Spacious & Neutral Interiors",
                   description: "Clean images help buyers imagine themselves in the space, making the property more inviting and easier to sell."
                 },
                 {
-                  icon: Star,
+                  image: image4,
                   title: "Improve Online Performance",
                   description: "Polished, distraction-free images perform better on property portals and social media, generating more clicks and inquiries."
                 },
                 {
-                  icon: CheckCircle,
+                  image: img1,
                   title: "Professional Quality Every Time",
                   description: "Our editing team ensures that every image looks natural, seamless, and industry-standard, giving you confidence in your listings."
                 },
                 {
-                  icon: Users,
+                  image: img2,
                   title: "Confidential & Reliable Services",
                   description: "We handle your project files with complete confidentiality, delivering results on time while respecting your privacy."
                 }
-              ].map((benefit, index) => {
-                const Icon = benefit.icon;
-                return (
-                  <motion.div
-                    key={benefit.title}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-[#00F0FF]/50 transition-all duration-300 text-center"
-                  >
-                    <div className="w-16 h-16 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <Icon size={24} className="text-white" />
-                    </div>
+              ].map((benefit, index) => (
+                <motion.div
+                  key={benefit.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl overflow-hidden hover:border-[#00F0FF]/50 transition-all duration-300 group"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={benefit.image} 
+                      alt={benefit.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  </div>
+                  <div className="p-6">
                     <h4 className="text-xl font-bold text-white mb-4">{benefit.title}</h4>
                     <p className="text-gray-300 leading-relaxed">{benefit.description}</p>
-                  </motion.div>
-                );
-              })}
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
@@ -288,11 +320,26 @@ const ObjectRemovalServices = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                "Real Estate Agents & Brokers – Make listings look more professional and appealing.",
-                "Property Developers – Present large-scale projects with flawless visuals.",
-                "Interior Designers – Showcase clean, distraction-free design portfolios.",
-                "Photographers – Outsource object removal to save time and ensure polished results.",
-                "Homeowners – Prepare properties for faster and more profitable sales."
+                {
+                  title: "Real Estate Agents & Brokers",
+                  description: "Make listings look more professional and appealing."
+                },
+                {
+                  title: "Property Developers",
+                  description: "Present large-scale projects with flawless visuals."
+                },
+                {
+                  title: "Interior Designers",
+                  description: "Showcase clean, distraction-free design portfolios."
+                },
+                {
+                  title: "Photographers",
+                  description: "Outsource object removal to save time and ensure polished results."
+                },
+                {
+                  title: "Homeowners",
+                  description: "Prepare properties for faster and more profitable sales."
+                }
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -300,12 +347,10 @@ const ObjectRemovalServices = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-[#00F0FF]/50 transition-all duration-300"
+                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-[#00F0FF]/50 transition-all duration-300 hover:bg-gray-800/70"
                 >
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle size={20} className="text-[#00F0FF] flex-shrink-0 mt-1" />
-                    <p className="text-gray-300 leading-relaxed">{item}</p>
-                  </div>
+                  <h4 className="text-lg font-bold text-white mb-3">{item.title}</h4>
+                  <p className="text-gray-300 leading-relaxed">{item.description}</p>
                 </motion.div>
               ))}
             </div>

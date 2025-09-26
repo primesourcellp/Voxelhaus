@@ -253,7 +253,7 @@ const Services = () => {
                 transition={{ duration: 0.8, delay: 1.2 }}
                 className="flex flex-col sm:flex-row gap-4"
               >
-                <motion.button
+                <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ 
                     opacity: 1, 
@@ -269,16 +269,21 @@ const Services = () => {
                     x: { duration: 0.6, delay: 1.4 },
                     boxShadow: { duration: 2, repeat: Infinity }
                   }}
-                  className="px-8 py-4 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-white font-bold rounded-xl flex items-center gap-3 group"
                   whileHover={{ 
                     scale: 1.05,
                     boxShadow: '0 0 40px rgba(0, 240, 255, 0.6)'
                   }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Get Started Today
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </motion.button>
+                  <Link 
+                    to="/contact"
+                    className="px-8 py-4 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-white font-bold rounded-xl flex items-center gap-3 group"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
+                    Get Started Today
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </motion.div>
               </motion.div>
             </motion.div>
 
@@ -449,14 +454,19 @@ const Services = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-white font-bold rounded-xl flex items-center gap-3 group"
               >
-                Get Started Today
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+                <Link 
+                  to="/contact"
+                  className="px-8 py-4 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-white font-bold rounded-xl flex items-center gap-3 group"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
+                  Get Started Today
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
               
               
             </div>

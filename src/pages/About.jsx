@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   CheckCircle, 
   Target, 
@@ -222,11 +223,9 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 1.2 }}
                 className="flex flex-col sm:flex-row gap-4"
               >
-                <motion.button
+                <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ 
-
-
                     opacity: 1, 
                     x: 0,
                     boxShadow: [
@@ -240,16 +239,21 @@ const About = () => {
                     x: { duration: 0.6, delay: 1.4 },
                     boxShadow: { duration: 2, repeat: Infinity }
                   }}
-                  className="px-8 py-4 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-white font-bold rounded-xl flex items-center gap-3 group"
                   whileHover={{ 
                     scale: 1.05,
                     boxShadow: '0 0 40px rgba(0, 240, 255, 0.6)'
                   }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Get Started Today
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </motion.button>
+                  <Link 
+                    to="/contact"
+                    className="px-8 py-4 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-white font-bold rounded-xl flex items-center gap-3 group"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
+                    Get Started Today
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </motion.div>
               </motion.div>
             </motion.div>
 
@@ -552,31 +556,41 @@ const About = () => {
               <p className="text-gray-300 mb-8">Join hundreds of real estate professionals who trust Voxelhaus for their visual needs.</p>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <motion.button
+                <motion.div
                   whileHover={{ 
                     scale: 1.05,
                     boxShadow: '0 0 40px rgba(0, 240, 255, 0.8)',
                     y: -2
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-bold px-10 py-4 rounded-2xl flex items-center justify-center space-x-3 text-lg transition-all duration-300 shadow-lg shadow-[#00F0FF]/25"
                 >
-                  <span>Get Started Today</span>
-                  <ArrowRight size={20} />
-                </motion.button>
+                  <Link 
+                    to="/contact"
+                    className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-bold px-10 py-4 rounded-2xl flex items-center justify-center space-x-3 text-lg transition-all duration-300 shadow-lg shadow-[#00F0FF]/25"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
+                    <span>Get Started Today</span>
+                    <ArrowRight size={20} />
+                  </Link>
+                </motion.div>
                 
-                <motion.button
+                <motion.div
                   whileHover={{ 
                     scale: 1.05,
                     boxShadow: '0 0 40px rgba(0, 240, 255, 0.8)',
                     y: -2
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-[#00F0FF] text-[#00F0FF] px-10 py-4 rounded-2xl font-bold flex items-center justify-center space-x-3 text-lg hover:bg-[#00F0FF] hover:text-black transition-all duration-300 shadow-lg shadow-[#00F0FF]/10"
                 >
-                  <MessageSquare size={20} />
-                  <span>Contact Us</span>
-                </motion.button>
+                  <Link 
+                    to="/contact"
+                    className="border-2 border-[#00F0FF] text-[#00F0FF] px-10 py-4 rounded-2xl font-bold flex items-center justify-center space-x-3 text-lg hover:bg-[#00F0FF] hover:text-black transition-all duration-300 shadow-lg shadow-[#00F0FF]/10"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
+                    <MessageSquare size={20} />
+                    <span>Contact Us</span>
+                  </Link>
+                </motion.div>
               </div>
             </div>
             

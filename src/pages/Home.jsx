@@ -243,7 +243,7 @@ const Home = () => {
                 transition={{ duration: 0.8, delay: 1 }}
                 className="flex flex-col sm:flex-row gap-4"
               >
-                <motion.button
+                <motion.div
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ 
                     opacity: 1, 
@@ -269,12 +269,17 @@ const Home = () => {
                     y: -5
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-bold px-8 py-4 rounded-xl flex items-center justify-center space-x-2 text-lg transition-all duration-300 border-2 border-transparent hover:border-[#00F0FF]/50"
                 >
-                  <span>Get a Free Quote</span>
-                  <ArrowRight size={20} />
-                </motion.button>
-                <motion.button
+                  <Link 
+                    to="/contact"
+                    className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-bold px-8 py-4 rounded-xl flex items-center justify-center space-x-2 text-lg transition-all duration-300 border-2 border-transparent hover:border-[#00F0FF]/50"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
+                    <span>Get a Free Quote</span>
+                    <ArrowRight size={20} />
+                  </Link>
+                </motion.div>
+                <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 1.4 }}
@@ -284,11 +289,16 @@ const Home = () => {
                     y: -5
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-[#00F0FF] text-[#00F0FF] px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 text-lg hover:bg-[#00F0FF] hover:text-black transition-all duration-300 hover:shadow-2xl"
                 >
-                  <MessageSquare size={20} />
-                  <span>Contact Us Today</span>
-                </motion.button>
+                  <Link 
+                    to="/contact"
+                    className="border-2 border-[#00F0FF] text-[#00F0FF] px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 text-lg hover:bg-[#00F0FF] hover:text-black transition-all duration-300 hover:shadow-2xl"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
+                    <MessageSquare size={20} />
+                    <span>Contact Us Today</span>
+                  </Link>
+                </motion.div>
               </motion.div>
 
               {/* Stats */}
@@ -983,7 +993,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <motion.button
+              <motion.div
                 whileHover={{ 
                   scale: 1.05,
                   boxShadow: '0 0 30px rgba(0, 240, 255, 0.6)'
@@ -999,11 +1009,16 @@ const Home = () => {
                 transition={{ 
                   boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" }
                 }}
-                className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-bold px-8 py-4 rounded-xl flex items-center justify-center space-x-2 text-lg transition-all duration-300"
               >
-                <span>Get Started</span>
-                <ArrowRight size={20} />
-              </motion.button>
+                <Link 
+                  to="/contact"
+                  className="bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-bold px-8 py-4 rounded-xl flex items-center justify-center space-x-2 text-lg transition-all duration-300"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
+                  <span>Get Started</span>
+                  <ArrowRight size={20} />
+                </Link>
+              </motion.div>
               <motion.button
                 whileHover={{ 
                   scale: 1.05,
