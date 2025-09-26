@@ -1,19 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import image3d1 from '../../assets/3d_image_1.jpg';
-import image3d2 from '../../assets/3d-image_2.jpg';
-import image3d3 from '../../assets/3d_image_3.jpg';
-import image3d4 from '../../assets/3d_image_4.jpg';
-import image1 from '../../assets/Image.jpg';
-import image2 from '../../assets/Image1.jpg';
-import image3 from '../../assets/Image3.jpg';
-import image4 from '../../assets/Image4.jpg';
-import img1 from '../../assets/img1.png';
-import img2 from '../../assets/img2.png';
+import furnitureRemoval from '../../assets/furniture_removal.png';
+import wireRemoval from '../../assets/wire_removal.png';
+import personalRemoval from '../../assets/personal_removal.png';
+import outdoorRemoval from '../../assets/outdoor_removal.jpeg';
+import backgroundCleanup from '../../assets/background-cleanup.jpeg';
+import natural from '../../assets/natural.jpeg';
+import onlinePerformance from '../../assets/online_performance.jpeg';
+import objectTrueValue from '../../assets/object.jpeg';
+import professional from '../../assets/professional.jpeg';
 import img3 from '../../assets/img3.png';
-import img4 from '../../assets/img4.png';
-import img5 from '../../assets/img5.png';
-
 const ObjectRemovalServices = () => {
   return (
     <div className="min-h-screen bg-slate-900 text-white">
@@ -185,27 +181,27 @@ const ObjectRemovalServices = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
-                  image: image3d1,
+                  image: furnitureRemoval,
                   title: "Clutter & Furniture Removal",
                   description: "Take away unwanted furniture, boxes, or clutter from rooms to highlight clean, spacious interiors."
                 },
                 {
-                  image: image3d2,
+                  image: wireRemoval,
                   title: "Wire, Cable & Fixture Removal",
                   description: "Eliminate distracting wires, outlets, or unnecessary fixtures that reduce the elegance of property images."
                 },
                 {
-                  image: image3d3,
+                  image: personalRemoval,
                   title: "Personal Item Removal",
                   description: "Erase personal belongings such as photos, toys, or clothes to create neutral, buyer-friendly spaces."
                 },
                 {
-                  image: image3d4,
+                  image: outdoorRemoval,
                   title: "Outdoor Object Removal",
                   description: "Remove vehicles, bins, signage, or other distractions from exterior shots to improve curb appeal."
                 },
                 {
-                  image: image1,
+                  image: backgroundCleanup,
                   title: "Background Clean-Up",
                   description: "Ensure every corner of the property image looks neat, polished, and free from visual distractions."
                 }
@@ -254,27 +250,27 @@ const ObjectRemovalServices = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  image: image2,
+                  image: objectTrueValue,
                   title: "Highlight the Property's True Value",
                   description: "By removing distractions, we ensure buyers focus on the property's architecture, design, and potential rather than what's in the background."
                 },
                 {
-                  image: image3,
+                  image: natural,
                   title: "Create Spacious & Neutral Interiors",
                   description: "Clean images help buyers imagine themselves in the space, making the property more inviting and easier to sell."
                 },
                 {
-                  image: image4,
+                  image: onlinePerformance,
                   title: "Improve Online Performance",
                   description: "Polished, distraction-free images perform better on property portals and social media, generating more clicks and inquiries."
                 },
                 {
-                  image: img1,
+                  image:professional,
                   title: "Professional Quality Every Time",
                   description: "Our editing team ensures that every image looks natural, seamless, and industry-standard, giving you confidence in your listings."
                 },
                 {
-                  image: img2,
+                  image: furnitureRemoval,
                   title: "Confidential & Reliable Services",
                   description: "We handle your project files with complete confidentiality, delivering results on time while respecting your privacy."
                 }
