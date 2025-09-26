@@ -12,8 +12,8 @@ import {
 import BgImage from "../assets/img3.png";
 
 const contactDetails = [
-  { icon: FaEnvelope, title: "Email", info: "xxxxxxxxxx" },
-  { icon: FaPhoneAlt, title: "Phone", info: "(+91) xxxxxxxxxxx" },
+  { icon: FaEnvelope, title: "Email", info: "connect@voxelhausconsultancy.com" },
+  { icon: FaPhoneAlt, title: "Phone", info: "(+91) 7010665966" },
   { icon: FaWhatsapp, title: "WhatsApp", info: "Chat on WhatsApp" },
   { icon: FaFacebook, title: "Facebook", info: "Facebook" },
   { icon: FaInstagram, title: "Instagram", info: "Instagram" },
@@ -194,14 +194,23 @@ const Contact = () => {
                 <div className="space-y-5">
                   {contactDetails.map((item, index) => {
                     const Icon = item.icon;
+                    const isWhatsApp = item.title === "WhatsApp";
+                    
+                    const handleClick = () => {
+                      if (isWhatsApp) {
+                        window.open("https://wa.me/917010665966", "_blank");
+                      }
+                    };
+                    
                     return (
                       <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 1.0 + (index * 0.1) }}
-                        className="flex items-center space-x-3 group cursor-pointer"
+                        className={`flex items-center space-x-3 group ${isWhatsApp ? 'cursor-pointer' : ''}`}
                         whileHover={{ x: 3 }}
+                        onClick={handleClick}
                       >
                         <div className="w-5 h-5 flex items-center justify-center">
                           <Icon size={16} className="text-gray-600 group-hover:text-[#00F0FF] transition-colors duration-300" />

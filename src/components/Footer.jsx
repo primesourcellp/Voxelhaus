@@ -174,31 +174,31 @@ const Footer = () => {
                 <MapPin size={20} className="text-[#00d4ff] mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300">Office Address</p>
-                  <p className="text-sm text-gray-400">(Office location)</p>
+                  <p className="text-sm text-gray-400">394 maniyam velleper st 6th st kk pudur Saibaba colony Coimbatore 641038</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={20} className="text-[#00d4ff] flex-shrink-0" />
                 <a
-                  href="tel:+91-XXXXXXXXXX"
+                  href="tel:+9170106 65966"
                   className="text-gray-300 hover:text-[#00d4ff] transition-colors duration-300"
                 >
-                  +91-XXXXXXXXXX
+                  +91 70106 65966
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={20} className="text-[#00d4ff] flex-shrink-0" />
                 <a
-                  href="mailto:info@voxelhaus.com"
+                  href="mailto:connect@voxelhausconsultancy.com"
                   className="text-gray-300 hover:text-[#00d4ff] transition-colors duration-300"
                 >
-                  info@voxelhaus.com
+                  connect@voxelhausconsultancy.com
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Globe size={20} className="text-[#00d4ff] flex-shrink-0" />
                 <a
-                  href=""
+                  href="https://voxelhausconsultancy.com/"
                   className="text-gray-300 hover:text-[#00d4ff] transition-colors duration-300"
                 >
                   www.voxelhaus.com
