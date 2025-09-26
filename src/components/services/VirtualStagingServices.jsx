@@ -1,17 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import image3d1 from '../../assets/3d_image_1.jpg';
-import image3d2 from '../../assets/3d-image_2.jpg';
-import image3d3 from '../../assets/3d_image_3.jpg';
-import image3d4 from '../../assets/3d_image_4.jpg';
-import image1 from '../../assets/Image.jpg';
-import image2 from '../../assets/Image1.jpg';
-import image3 from '../../assets/Image3.jpg';
-import image4 from '../../assets/Image4.jpg';
-import img1 from '../../assets/img1.png';
-import img2 from '../../assets/img2.png';
+import image3d1 from '../../assets/stage1.jpg';
+import image3d2 from '../../assets/stage2.jpg';
+import image3d3 from '../../assets/stage3.jpg';
+import image3d4 from '../../assets/stage4.jpg';
+import image1 from '../../assets/stage5.jpg';
+import image2 from '../../assets/stage6.jpg';
+import image3 from '../../assets/stage7.jpg';
+import image4 from '../../assets/stage8.jpg';
+import img1 from '../../assets/stage9.jpg';
+import img2 from '../../assets/stage10.jpg';
 import img3 from '../../assets/img3.png';
-import img4 from '../../assets/img4.png';
+import img4 from '../../assets/stage11.jpg';
 import img5 from '../../assets/img5.png';
 
 const VirtualStagingServices = () => {
