@@ -12,6 +12,10 @@ import image from '../assets/Image.jpg';
 import image1 from '../assets/Image1.jpg';
 import image3 from '../assets/Image3.jpg';
 import image4 from '../assets/Image4.jpg';
+import galleryWebp from '../assets/gallery.webp';
+import gallery2 from '../assets/gallery2.jpg';
+import gallery3 from '../assets/gallery3.jpg';
+
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -54,15 +58,15 @@ const Gallery = () => {
     {
       id: 5,
       image: image,
-      title: "Real Estate Photo Enhancement",
-      category: "photo-editing",
-      description: "Professional photo editing with enhanced lighting and color correction.",
-      service: "Real Estate Photo Enhancement Services"
+      title: "3D Floor Plan - Residential Layout",
+      category: "floor-plans",
+      description: "Detailed 3D floor plan showing room layout and spatial relationships.",
+      service: "3D Floor Plan Redraw Services"
     },
     {
       id: 6,
-      image: image1,
-      title: "Virtual Staging - Living Room",
+      image: galleryWebp,
+      title: "Virtual Staging - Dining Room",
       category: "virtual-staging",
       description: "Digitally furnished living space creating an inviting atmosphere for potential buyers.",
       service: "Visual Staging Services"
@@ -70,18 +74,34 @@ const Gallery = () => {
     {
       id: 7,
       image: image3,
-      title: "Sky Replacement & Enhancement",
-      category: "photo-editing",
-      description: "Professional sky replacement transforming dull weather into perfect blue skies.",
-      service: "Sky Replacement Services"
+      title: "3D Floor Plan - Residential Layout",
+      category: "floor-plans",
+      description: "Detailed 3D floor plan showing room layout and spatial relationships.",
+      service: "3D Floor Plan Redraw Services"
     },
     {
       id: 8,
       image: image4,
-      title: "Object Removal & Cleanup",
-      category: "photo-editing",
-      description: "Seamless removal of unwanted objects and clutter from property photos.",
-      service: "Real Estate Object Removal Services"
+      title: "3D Floor Plan - Residential Layout",
+      category: "floor-plans",
+      description: "Detailed 3D floor plan showing room layout and spatial relationships.",
+      service: "3D Floor Plan Redraw Services"
+    },
+    {
+      id: 9,
+      image: gallery2,
+      title: "Virtual Staging - Bed Room",
+      category: "virtual-staging",
+      description: "Digitally furnished living space creating an inviting atmosphere for potential buyers.",
+      service: "Visual Staging Services"
+    },
+    {
+      id: 10,
+      image: gallery3,
+      title: "Virtual Staging - Living Room",
+      category: "virtual-staging",
+      description: "Digitally furnished living space creating an inviting atmosphere for potential buyers.",
+      service: "Visual Staging Services"
     }
   ];
 
@@ -632,7 +652,7 @@ const Gallery = () => {
             >
               <Link 
                 to="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-semibold rounded-xl hover:shadow-[0px_0px_30px_5px_rgba(0,240,255,0.3)] transition-all duration-300"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-[#00F0FF] to-[#0099FF] text-black font-semibold rounded-xl shadow-lg hover:shadow-[0px_0px_30px_5px_rgba(0,240,255,0.3)] transition-all duration-300"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               >
                 Get Started Today
