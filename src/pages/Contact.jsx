@@ -17,7 +17,7 @@ const contactDetails = [
   { icon: FaWhatsapp, title: "WhatsApp", info: "Chat on WhatsApp" },
   { icon: FaFacebook, title: "Facebook", info: "Facebook" },
   { icon: FaInstagram, title: "Instagram", info: "Instagram" },
-  { icon: FaMapMarkerAlt, title: "Address", info: "xxxxxxxxxx xxxxxxxxxxxxxxx xxxxxxxxxxxxxxx xxxxxxxxxxx xxxxxxx xxx" },
+  { icon: FaMapMarkerAlt, title: "Address", info: "394 maniyam velleper st 6th st kk pudur Saibaba colony Coimbatore 641038" },
 ];
 
 const Contact = () => {
@@ -249,7 +249,7 @@ const Contact = () => {
             >
               {/* Embedded Google Map */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.558179384777!2d77.38933797477928!3d8.9206006911365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0427a947312531%3A0x37be84092961c8d5!2sPrimesource%20Consulting%20LLP!5e0!3m2!1sen!2sin!4v1758863233823!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3916.1016998660048!2d76.94205167504562!3d11.030996089133641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDAxJzUxLjYiTiA3NsKwNTYnNDAuNyJF!5e0!3m2!1sen!2sin!4v1758884795241!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -257,7 +257,7 @@ const Contact = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="rounded-2xl"
-                title="Primesource Consulting LLP Location"
+                title="Voxelhaus Consultancy Location"
               ></iframe>
 
               {/* Map Overlay with Contact Button */}
@@ -268,7 +268,7 @@ const Contact = () => {
                 className="absolute top-4 right-4"
               >
                 <motion.a
-                  href="https://maps.app.goo.gl/ZnyE1wm4SY6DSrjo9"
+                  href="https://maps.app.goo.gl/6gd6CNVzRTv81tT39"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ 
@@ -289,9 +289,9 @@ const Contact = () => {
                 transition={{ duration: 0.6, delay: 2.4 }}
                 className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg max-w-sm"
               >
-                <h3 className="font-bold text-gray-800 text-lg mb-2">Primesource Consulting LLP</h3>
+                <h3 className="font-bold text-gray-800 text-lg mb-2">Voxelhaus Consultancy</h3>
                 <p className="text-gray-600 text-sm mb-3">
-                  10-91-K6, Pavoorchatram - Surandai - Shencottai, Nehru Nagar, Pavoorchatram, Tamil Nadu 627806
+                 394 maniyam velleper st 6th st kk pudur Saibaba colony Coimbatore 641038
                 </p>
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
                   <span className="flex items-center">
@@ -301,7 +301,7 @@ const Contact = () => {
                 </div>
                 <div className="mt-3 space-y-2">
                   <motion.a
-                    href="https://maps.app.goo.gl/ZnyE1wm4SY6DSrjo9"
+                    href="https://maps.app.goo.gl/6gd6CNVzRTv81tT39"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ x: 5 }}
@@ -311,7 +311,7 @@ const Contact = () => {
                     <span className="text-sm">Directions</span>
                   </motion.a>
                   <motion.a
-                    href="https://maps.app.goo.gl/ZnyE1wm4SY6DSrjo9"
+                    href="https://maps.app.goo.gl/6gd6CNVzRTv81tT39"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ x: 5 }}
