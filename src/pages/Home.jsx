@@ -26,6 +26,18 @@ import {
 } from 'lucide-react';
 import heroImage from '../assets/hero.jpg';
 import houseAnimationGif from '../assets/output-onlinegiftools.gif';
+import Image3d from  '../assets/3d_image_4.png';
+import realEstateImage from '../assets/3d_img_2.jpeg';
+import team from '../assets/team1.jpeg';
+import photoshopWork from '../assets/photoshop_work1.jpeg';
+import trust from '../assets/real_estate_2.jpeg';
+import secure from '../assets/secure.png';
+import homeAbout from '../assets/home_about1.png';
+import Turnaround from '../assets/turnaround.png';
+import affordable from '../assets/affordable1.png';
+
+
+
 
 const Home = () => {
   const fadeInUp = {
@@ -47,31 +59,31 @@ const Home = () => {
       icon: Handshake,
       title: "Trusted by Real Estate Agents & Developers",
       description: "We work closely with real estate professionals, developers, and property owners who rely on us to deliver visuals that truly sell. Our proven track record ensures your listings stand out in a competitive market.",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: trust
     },
     {
       icon: Lock,
       title: "100% Confidential & Secure Services",
       description: "Your projects and property details are always safe with us. We maintain strict confidentiality, ensuring that your work is handled with the highest level of security and professionalism.",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: secure
     },
     {
       icon: Zap,
       title: "Fast Turnaround Without Compromising Quality",
       description: "We understand the urgency of the real estate market. That's why we deliver projects quickly while maintaining flawless quality in every floor plan, staging, and photo edit.",
-      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: Turnaround
     },
     {
       icon: Wallet,
       title: "Affordable, Customized Solutions",
       description: "We recognize the uniqueness of every project and create customized strategies to match. We provide tailored services that fit your budget without sacrificing the professional touch.",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: affordable
     },
     {
       icon: Users,
       title: "Professional & Creative Team",
       description: "Our experienced designers, editors, and consultants bring both technical skill and creative vision, ensuring your property visuals look polished and inspiring.",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: team
     }
   ];
 
@@ -81,7 +93,7 @@ const Home = () => {
       title: "Floor Plans",
       description: "Professional 2D & 3D layouts – clear, accurate, and tailored for property marketing.",
       features: ["2D Floor Plans", "3D Floor Plans", "Floor Plan Redraws"],
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: Image3d,
       path: "/floor-plans"
     },
     {
@@ -97,7 +109,7 @@ const Home = () => {
       title: "Photoshop Works",
       description: "Expert photo editing, retouching, and enhancements to make every property stand out.",
       features: ["Photo Enhancement", "Object Removal", "Sky Replacement"],
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: photoshopWork,
       path: "/object-removal"
     },
     {
@@ -105,7 +117,7 @@ const Home = () => {
       title: "Real Estate Marketing",
       description: "Complete visual solutions for real estate professionals – from brochures to digital presentations.",
       features: ["3D Visualization", "Video Editing", "Marketing Materials"],
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: realEstateImage,
       path: "/real-estate"
     }
   ];
@@ -481,7 +493,7 @@ const Home = () => {
               >
                 <div className="w-full h-96 rounded-2xl overflow-hidden shadow-2xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                    src={homeAbout}
                     alt="Modern Real Estate Office"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
