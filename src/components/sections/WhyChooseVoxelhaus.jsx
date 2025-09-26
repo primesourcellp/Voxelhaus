@@ -4,10 +4,9 @@ import { Eye, Target, Clock, DollarSign, Users, Shield } from 'lucide-react';
 import impact from '../../assets/about1.png';
 import precision from '../../assets/about2.png';
 import accelerated from '../../assets/about3.png';
-
-import valuesImage from '../../assets/bg.jpeg';
-import advantageImage from '../../assets/bg2.jpeg';
-import partnerImage from '../../assets/bg3.jpeg';
+import valuesImage from '../../assets/about4.jpeg';
+import advantageImage from '../../assets/about5.jpeg';
+import partnerImage from '../../assets/about6.jpeg';
 
 const WhyChooseVoxelhaus = () => {
   const whyChooseUs = [
