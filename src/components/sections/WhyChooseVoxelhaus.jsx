@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Eye, Target, Clock, DollarSign, Users, Shield } from 'lucide-react';
-import whyChooseImage from '../../assets/Image.jpg';
-import trustImage from '../../assets/Image3.jpg';
-import commitmentImage from '../../assets/Image4.jpg';
+import impact from '../../assets/about1.png';
+import precision from '../../assets/about2.png';
+import accelerated from '../../assets/about3.png';
+
 import valuesImage from '../../assets/bg.jpeg';
 import advantageImage from '../../assets/bg2.jpeg';
 import partnerImage from '../../assets/bg3.jpeg';
@@ -68,8 +69,8 @@ const WhyChooseVoxelhaus = () => {
         <div className="space-y-24">
           {whyChooseUs.map((item, index) => {
             const Icon = item.icon;
-            const whyChooseImages = [whyChooseImage, trustImage, commitmentImage, valuesImage, advantageImage, partnerImage];
-            const currentImage = whyChooseImages[index] || whyChooseImage;
+            const whyChooseImages = [impact, precision, accelerated, valuesImage, advantageImage, partnerImage];
+            const currentImage = whyChooseImages[index] || impact;
             const isEven = index % 2 === 0;
             
             return (

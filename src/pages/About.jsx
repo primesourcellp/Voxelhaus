@@ -23,8 +23,10 @@ import {
 } from 'lucide-react';
 import aboutHeroImage from '../assets/img1.png';
 import houseAnimation from '../assets/house-animation.gif';
-import trustImage from '../assets/Image3.jpg';
-import commitmentImage from '../assets/Image4.jpg';
+import aboutbg1 from '../assets/aboutbg1.png';
+import aboutbg2 from '../assets/aboutbg2.png';
+import aboutbg3 from '../assets/aboutbg3.png';
+
 import WhyChooseVoxelhaus from '../components/sections/WhyChooseVoxelhaus';
 import OurFoundationOfExcellence from '../components/sections/OurFoundationOfExcellence';
 import TheVoxelhausAdvantage from '../components/sections/TheVoxelhausAdvantage';
@@ -389,8 +391,8 @@ const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
             {trustPoints.map((point, index) => {
               const Icon = point.icon;
-              const trustImages = [trustImage, commitmentImage, trustImage, commitmentImage];
-              const currentImage = trustImages[index] || trustImage;
+              const trustImages = [aboutbg1, aboutbg2, aboutbg3,aboutbg1];
+              const currentImage = trustImages[index] || aboutbg1;
               
               return (
                 <motion.div
